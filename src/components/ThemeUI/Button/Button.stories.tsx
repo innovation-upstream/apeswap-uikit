@@ -1,10 +1,10 @@
 import React from "react";
-import ThemeUIButton from "./ThemeUIButton";
-import StorybookLayout from "../StorybookLayout/StorybookLayout";
+import Button from "./Button";
+import StorybookLayout from "../../StorybookLayout/StorybookLayout";
 
 export default {
-  title: "ThemeUI/Components/ThemeUIButton",
-  component: ThemeUIButton,
+  title: "ThemeUI/Components/Button",
+  component: Button,
   argTypes: {
     colorMode: {
       options: ["light", "dark"],
@@ -15,7 +15,7 @@ export default {
 
 export const button = (args: any) => (
   <StorybookLayout {...args}>
-    <ThemeUIButton {...args} />
+    <Button {...args} />
   </StorybookLayout>
 );
 
