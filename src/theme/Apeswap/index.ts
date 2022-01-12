@@ -2,7 +2,7 @@ import type { Theme } from "theme-ui";
 import Colors from "./colors";
 import baseTheme, { breakpointMap } from "./base";
 
-const themeUI: Theme = {
+const Apeswap: Theme = {
   ...baseTheme,
   colors: Colors,
   styles: {
@@ -23,6 +23,12 @@ const themeUI: Theme = {
     nav: {
       breakpoints: [`@media screen and (min-width: ${breakpointMap.lg}px)`],
     },
+    progress: {
+      primary: "primary",
+      color: "green",
+      background: "#DAA628",
+      height: "20px",
+    },
   },
   buttons: {
     primary: {
@@ -41,4 +47,4 @@ const themeUI: Theme = {
   },
 };
 
-export { themeUI as default };
+export default Apeswap;
