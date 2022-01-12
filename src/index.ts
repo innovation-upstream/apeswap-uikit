@@ -36,3 +36,6 @@ export * from "./widgets/MarketingModal";
 // Theme
 export { default as ResetCSS } from "./ResetCSS";
 export * from "./theme";
+
+// ThemeUI Components
+export * from "./components/ThemeUI";
