@@ -13,7 +13,7 @@ export const variant = {
 type Animation = typeof animation[keyof typeof animation];
 type Variant = typeof variant[keyof typeof variant];
 
-export interface SkeletonProps extends BoxProps {
+export interface UISkeletonProps extends BoxProps {
   animation?: Animation;
   variant?: Variant;
   width?: string;

@@ -1,2 +1,2 @@
 export { default as ThemeUISkeleton } from "./Skeleton";
-export type { SkeletonProps } from "./Skeleton.interface";
+export type { UISkeletonProps } from "./Skeleton.interface";
