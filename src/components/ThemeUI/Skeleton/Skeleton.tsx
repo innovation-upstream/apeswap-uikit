@@ -1,9 +1,9 @@
 import React from "react";
 import { Box } from "theme-ui";
-import { SkeletonProps, animation as ANIMATION, variant as VARIANT } from "./Skeleton.interface";
+import { UISkeletonProps, animation as ANIMATION, variant as VARIANT } from "./Skeleton.interface";
 import styles from "./styles";
 
-const Skeleton: React.FC<SkeletonProps> = ({ variant = VARIANT.RECT, animation = ANIMATION.PULSE, ...props }) => {
+const Skeleton: React.FC<UISkeletonProps> = ({ variant = VARIANT.RECT, animation = ANIMATION.PULSE, ...props }) => {
   return (
     <Box
       {...props}
