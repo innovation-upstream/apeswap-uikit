@@ -1,5 +1,7 @@
 const Colors = {
-  background: {
+  background: "#FDFBF5",
+  backgroundDisabled: "#E9EAEB",
+  backgrounds: {
     navbar: "#F9F4E7",
     body: "#FDFBF5",
     lvl1: "#F1EADA",
@@ -22,7 +24,9 @@ const Colors = {
   },
   modes: {
     dark: {
-      background: {
+      background: "#0B0B0B",
+      backgroundDisabled: "#3c3742",
+      backgrounds: {
         navbar: "#212121",
         body: "#0B0B0B",
         lvl1: "#383838",

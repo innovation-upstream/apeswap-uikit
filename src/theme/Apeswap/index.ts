@@ -95,7 +95,7 @@ const Apeswap: Theme = {
       borderRadius: "normal",
       border: "none",
       fontWeight: "normal",
-      background: "background.lvl1",
+      background: "backgrounds.lvl1",
       resize: "none",
       color: "textareaColor",
       "&:focus": {
@@ -123,14 +123,14 @@ const Apeswap: Theme = {
 
       "&:disabled": {
         cursor: "not-allowed",
-        background: "background.lvl1",
+        background: "backgrounds.lvl1",
         color: "primaryButtonDisable",
         border: "primaryBtnDisable",
       },
     },
     secondary: {
       ...buttonBaseStyles,
-      background: "background.navbar",
+      background: "backgrounds.navbar",
       border: "secondaryButton",
       color: "yellow",
 
@@ -144,7 +144,7 @@ const Apeswap: Theme = {
   },
   cards: {
     primary: {
-      background: "background.navbar",
+      background: "backgrounds.navbar",
       borderRadius: "normal",
     },
   },

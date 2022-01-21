@@ -8,7 +8,13 @@ export default {
   argTypes: {
     colorMode: {
       options: ["light", "dark"],
-      control: { type: "radio" },
+      control: { type: "inline-radio" },
+    },
+    animation: {
+      control: { type: "select" },
+    },
+    variant: {
+      control: { type: "select" },
     },
   },
 };
@@ -24,14 +30,15 @@ Avatar.args = {
   width: "40px",
   height: "40px",
   variant: "circle",
-  colorMode: "light",
+  colorMode: "dark",
   animation: "waves",
 };
 
 export const Block = Default.bind({});
 Block.args = {
   height: "200px",
+  width: "100%",
   animation: "waves",
-  colorMode: "light",
+  colorMode: "dark",
   variant: "rect",
 };
