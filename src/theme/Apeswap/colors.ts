@@ -22,6 +22,7 @@ const Colors = {
         lvl1: "#383838",
         lvl2: "#424242",
       },
+      brown: "#FAFAFA",
     },
   },
 };
