@@ -8,7 +8,13 @@ export default {
   argTypes: {
     colorMode: {
       options: ["light", "dark"],
-      control: { type: "radio" },
+      control: { type: "inline-radio" },
+    },
+    variant: {
+      control: { type: "select" },
+    },
+    size: {
+      control: { type: "select" },
     },
   },
 };
