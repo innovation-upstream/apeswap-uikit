@@ -1,25 +1,32 @@
 import React from "react";
 import StorybookLayout from "../../../StorybookLayout/StorybookLayout";
-import ThemeUICard from "./Card";
+import Card from "./Card";
 
 export default {
   title: "ThemeUI/Components/Card",
-  component: ThemeUICard,
+  component: Card,
   argTypes: {
     colorMode: {
       options: ["light", "dark"],
       control: { type: "inline-radio" },
     },
+    background: {
+      control: { type: "select" },
+    },
+    variant: {
+      control: { type: "select" },
+    },
   },
 };
 
-export const card = (args: any) => (
+export const Default = (args: any) => (
   <StorybookLayout {...args}>
-    <ThemeUICard {...args} />
+    <Card {...args} />
   </StorybookLayout>
 );
 
-card.args = {
+Default.args = {
   colorMode: "light",
   padding: 4,
+  variant: "primary",
 };

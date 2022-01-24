@@ -1,13 +1,14 @@
 import React from "react";
-import { Card } from "theme-ui";
+import { Card as ThemeUICard } from "theme-ui";
 import { UICardProps, variants } from "./Card.interface";
+import colors from "../../../../theme/Apeswap/types";
 
-const ThemeUICard: React.FC<UICardProps> = ({ children, variant = variants.PRIMARY, sx, ...props }) => {
+const Card: React.FC<UICardProps> = ({ children, background, variant = variants.PRIMARY, sx, ...props }) => {
   return (
-    <Card {...props} sx={{ ...sx, variant: `cards.${variant}` }}>
+    <ThemeUICard {...props} sx={{ ...sx, variant: `cards.${variant}`, background }}>
       {children}
-    </Card>
+    </ThemeUICard>
   );
 };
 
-export default ThemeUICard;
+export default Card;
