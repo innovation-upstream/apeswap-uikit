@@ -3,7 +3,7 @@ import StorybookLayout from "../../../StorybookLayout/StorybookLayout";
 import Card from "./Card";
 
 export default {
-  title: "ThemeUI/Components/Card",
+  title: "ThemeUI/Components/Primitives/Card",
   component: Card,
   argTypes: {
     colorMode: {
@@ -19,13 +19,13 @@ export default {
   },
 };
 
-export const Default = (args: any) => (
+export const card = (args: any) => (
   <StorybookLayout {...args}>
     <Card {...args} />
   </StorybookLayout>
 );
 
-Default.args = {
+card.args = {
   colorMode: "light",
   padding: 4,
   variant: "primary",

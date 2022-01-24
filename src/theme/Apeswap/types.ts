@@ -18,6 +18,10 @@ const colorValues = {
   textareaColor: "textareaColor",
   black: "black",
   gradient: "gradient",
+  white1: "white1",
+  white2: "white2",
+  white3: "white3",
+  white4: "white4",
 };
 
 export type colorProps = keyof typeof colorValues;

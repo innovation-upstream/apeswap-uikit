@@ -1,39 +1,27 @@
 import React from "react";
 import StorybookLayout from "../../../StorybookLayout/StorybookLayout";
-import ThemeUIText from "./Text";
+import Text from "./Text";
 
 export default {
-  title: "ThemeUI/Components/Text",
-  component: ThemeUIText,
+  title: "ThemeUI/Components/Primitives/Text",
+  component: Text,
   argTypes: {
     colorMode: {
       options: ["light", "dark"],
       control: { type: "inline-radio" },
-    },
-    variant: {
-      options: [
-        "big",
-        "bigLight",
-        "bigBold",
-        "normal",
-        "normalLight",
-        "normalBold",
-        "small",
-        "smallLight",
-        "smallBold",
-      ],
-      control: { type: "select" },
     },
   },
 };
 
 export const text = (args: any) => (
   <StorybookLayout {...args}>
-    <ThemeUIText {...args}>Lorem Ipsum Text</ThemeUIText>
+    <Text {...args}>Lorem Ipsum Text</Text>
   </StorybookLayout>
 );
 
 text.args = {
   colorMode: "light",
-  variant: "normal",
+  variant: "large",
+  weight: "bold",
+  color: "brown",
 };

@@ -3,7 +3,7 @@ import StorybookLayout from "../../../StorybookLayout/StorybookLayout";
 import ThemeUITextarea from "./Textarea";
 
 export default {
-  title: "ThemeUI/Components/Textarea",
+  title: "ThemeUI/Components/Primitives/Textarea",
   component: ThemeUITextarea,
   argTypes: {
     colorMode: {

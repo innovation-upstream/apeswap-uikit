@@ -1,24 +1,29 @@
 import React from "react";
 import StorybookLayout from "../../../StorybookLayout/StorybookLayout";
-import Header from "./Header";
+import Heading from "./Heading";
 
 export default {
-  title: "ThemeUI/Components/Header",
-  component: Header,
+  title: "ThemeUI/Components/Primitives/Heading",
+  component: Heading,
   argTypes: {
     colorMode: {
       options: ["light", "dark"],
       control: { type: "inline-radio" },
     },
+    as: {
+      control: { type: "select" },
+    },
   },
 };
 
-export const header = (args: any) => (
+export const heading = (args: any) => (
   <StorybookLayout {...args}>
-    <Header {...args} />
+    <Heading {...args}>Heading</Heading>
   </StorybookLayout>
 );
 
-header.args = {
+heading.args = {
   colorMode: "light",
+  as: "h1",
+  banner: false,
 };

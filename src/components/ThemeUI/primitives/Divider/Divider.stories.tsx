@@ -3,7 +3,7 @@ import StorybookLayout from "../../../StorybookLayout/StorybookLayout";
 import ThemeUIDivider from "./Divider";
 
 export default {
-  title: "ThemeUI/Components/Divider",
+  title: "ThemeUI/Components/Primitives/Divider",
   component: ThemeUIDivider,
   argTypes: {
     colorMode: {
