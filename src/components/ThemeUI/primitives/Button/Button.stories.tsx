@@ -3,7 +3,7 @@ import Button from "./Button";
 import StorybookLayout from "../../../StorybookLayout/StorybookLayout";
 
 export default {
-  title: "ThemeUI/Components/Button",
+  title: "ThemeUI/Components/Primitives/Button",
   component: Button,
   argTypes: {
     colorMode: {
@@ -29,4 +29,5 @@ button.args = {
   colorMode: "light",
   variant: "primary",
   disabled: false,
+  size: "normal",
 };

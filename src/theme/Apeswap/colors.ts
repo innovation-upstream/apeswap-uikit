@@ -18,6 +18,10 @@ const Colors = {
   textareaColor: "#4D4040",
   black: "#000000",
   gradient: "linear-gradient(53.53deg, #A16552 15.88%, #E1B242 92.56%)",
+  white1: "#FDFBF5",
+  white2: "#F9F4E7",
+  white3: "#F1EADA",
+  white4: "#EADFC7",
   modes: {
     dark: {
       background: "#0B0B0B",
@@ -32,6 +36,10 @@ const Colors = {
       secondaryButtonDisableColor: "#F1EADA",
       dividerColor: "#333333",
       textareaColor: "#FAFAFA",
+      white1: "#0B0B0B",
+      white2: "#212121",
+      white3: "#383838",
+      white4: "#424242",
     },
   },
 };

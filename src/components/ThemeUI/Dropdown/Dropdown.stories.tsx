@@ -6,7 +6,7 @@ import DropdownItem from "./DropdownItem";
 import StorybookLayout from "../../StorybookLayout/StorybookLayout";
 
 export default {
-  title: "ThemeUI/Components/Dropdown",
+  title: "ThemeUI/Components/Primitives/Dropdown",
   component: Dropdown,
   argTypes: {
     colorMode: {
@@ -16,7 +16,7 @@ export default {
   },
 };
 
-export const Default = (args) => {
+export const dropdown = (args) => {
   const Title = () => <Text sx={{ color: "brown" }}>Dropdown</Text>;
 
   return (
@@ -35,6 +35,6 @@ export const Default = (args) => {
   );
 };
 
-Default.args = {
+dropdown.args = {
   colorMode: "light",
 };

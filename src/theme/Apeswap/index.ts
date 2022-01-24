@@ -18,15 +18,9 @@ const Apeswap: Theme = {
       fontFamily: "poppins",
       fontWeight: "bold",
     },
-    bigBold: { fontWeight: 700, fontSize: "22px", lineHeight: "33px", color: "black" },
-    big: { fontWeight: 500, fontSize: "22px", lineHeight: "33px", color: "black" },
-    bigLight: { fontWeight: 300, fontSize: "22px", lineHeight: "33px", color: "black" },
-    normalBold: { fontWeight: 700, fontSize: "16px", lineHeight: "24px", color: "black" },
-    normal: { fontWeight: 500, fontSize: "16px", lineHeight: "24px", color: "black" },
-    normalLight: { fontWeight: 300, fontSize: "16px", lineHeight: "24px", color: "black" },
-    smallBold: { fontWeight: 700, fontSize: "12px", lineHeight: "18px", color: "black" },
-    small: { fontWeight: 500, fontSize: "12px", lineHeight: "18px", color: "black" },
-    smallLight: { fontWeight: 300, fontSize: "12px", lineHeight: "18px", color: "black" },
+    large: { fontSize: 22, lineHeight: "33px" },
+    normal: { fontSize: 16, lineHeight: "24px" },
+    small: { fontSize: 12, lineHeight: "18px" },
   },
   styles: {
     root: {
@@ -82,7 +76,7 @@ const Apeswap: Theme = {
       fontSize: "16px",
       lineHeight: "24px",
     },
-    bannerTitle: {
+    banner: {
       variant: "text.heading",
       fontWeight: "800",
       fontSize: "60px",
@@ -123,20 +117,20 @@ const Apeswap: Theme = {
 
       "&:disabled": {
         cursor: "not-allowed",
-        background: "lvl1",
+        background: "white3",
         color: "primaryButtonDisable",
         border: "primaryBtnDisable",
       },
     },
     secondary: {
       ...buttonBaseStyles,
-      background: "navbar",
+      background: "white2",
       border: "secondaryButton",
       color: "yellow",
 
       "&:disabled": {
         cursor: "not-allowed",
-        background: "secondaryButtonDisableBg",
+        background: "white3",
         border: "secondaryButtonDisable",
         color: "secondaryButtonDisableColor",
       },

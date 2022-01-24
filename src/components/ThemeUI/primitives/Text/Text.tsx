@@ -1,13 +1,20 @@
 import React from "react";
-import { Text } from "theme-ui";
-import { UITextProps, variants } from "./Text.interface";
+import { Text as ThemeUIText } from "theme-ui";
+import { UITextProps, weights, variants } from "./Text.interface";
 
-const ThemeUIText: React.FC<UITextProps> = ({ variant = variants.NORMAL, children, sx, ...props }) => {
+const Text: React.FC<UITextProps> = ({
+  variant = variants.NORMAL,
+  weight = weights.NORMAL,
+  children,
+  color,
+  sx,
+  ...props
+}) => {
   return (
-    <Text {...props} sx={{ ...sx, variant: `text.${variant}` }}>
+    <ThemeUIText {...props} sx={{ ...sx, variant: `text.${variant}`, color, fontWeight: weight }}>
       {children}
-    </Text>
+    </ThemeUIText>
   );
 };
 
-export default ThemeUIText;
+export default Text;

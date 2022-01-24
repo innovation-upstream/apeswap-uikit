@@ -2,32 +2,20 @@ import { TextProps } from "theme-ui";
 
 export const variants = {
   SMALL: "small",
-  SMALLIGHT: "smallLight",
-  SMALLBOLD: "smallBold",
   NORMAL: "normal",
-  NORMALIGHT: "normalLight",
-  NORMALBOLD: "normalBold",
-  BIG: "big",
-  BIGLIGHT: "bigLight",
-  BIGBOLD: "bigBold",
-} as const;
-
-export const sizes = {
-  SMALL: "small",
-  NORMAL: "normal",
-  BIG: "big",
+  LARGE: "large",
 } as const;
 
 export const weights = {
-  LIGHT: "Light",
-  NORMAL: "Normal",
-  BOLD: "Bold",
+  LIGHT: "light",
+  NORMAL: "normal",
+  BOLD: "bold",
 } as const;
 
-type sizeProps = typeof sizes[keyof typeof sizes];
+type variantProps = typeof variants[keyof typeof variants];
 type weightProps = typeof weights[keyof typeof weights];
-type variants = typeof variants[keyof typeof variants];
 
 export interface UITextProps extends TextProps {
-  variant?: variants;
+  variant?: variantProps;
+  weight?: weightProps;
 }
