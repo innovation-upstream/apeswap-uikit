@@ -11,7 +11,7 @@ const Dropdown: React.FC<DropdownProps> = ({ component, children }) => {
   return (
     <Box
       sx={{
-        background: "backgrounds.lvl1",
+        background: "lvl1",
         borderRadius: "10px",
         cursor: "pointer",
       }}
