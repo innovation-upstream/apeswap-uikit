@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Box, Button } from "theme-ui";
-import { SwitchProps } from "./Switch.interface";
+import { buttonFontSizes, SwitchProps } from "./Switch.interface";
 import styles from "./styles";
 
-const Switch: React.FC<SwitchProps> = ({ checked, onChange }) => {
+const Switch: React.FC<SwitchProps> = ({ checked, onChange, size = "normal" }) => {
   const [isChecked, setIsChecked] = useState(checked);
   const handleClick = () => {
     setIsChecked(!isChecked);
@@ -21,11 +21,17 @@ const Switch: React.FC<SwitchProps> = ({ checked, onChange }) => {
         background: "lvl1",
       }}
     >
-      <Button sx={{ ...styles.switch, background: isChecked ? "transparent" : "yellow" }} onClick={handleClick}>
+      <Button
+        sx={{ ...styles.switch, background: isChecked ? "transparent" : "yellow", fontSize: buttonFontSizes[size] }}
+        onClick={handleClick}
+      >
         Switch
       </Button>
 
-      <Button sx={{ ...styles.switch, background: isChecked ? "yellow" : "transparent" }} onClick={handleClick}>
+      <Button
+        sx={{ ...styles.switch, background: isChecked ? "yellow" : "transparent", fontSize: buttonFontSizes[size] }}
+        onClick={handleClick}
+      >
         Switch
       </Button>
     </Box>
