@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Box, Flex } from "theme-ui";
-import { DropdownProps } from "./Dropdown.interface";
-import { IconSVG } from "../IconSVG";
+import { DropdownProps, dropdownPadding, fontSizes, sizes } from "./Dropdown.interface";
+import { IconSVG } from "../../IconSVG";
 
-const Dropdown: React.FC<DropdownProps> = ({ component, children }) => {
+const Dropdown: React.FC<DropdownProps> = ({ component, children, size = sizes.MEDIUM }) => {
   const [open, setOpen] = useState(false);
 
   const handleClick = () => setOpen((prev) => !prev);
@@ -18,11 +18,14 @@ const Dropdown: React.FC<DropdownProps> = ({ component, children }) => {
       onClick={handleClick}
     >
       <Flex
-        px={9}
-        py={12}
         sx={{
+          px: dropdownPadding[size].x,
+          py: dropdownPadding[size].y,
           justifyContent: "space-between",
           alignItems: "center",
+          span: {
+            fontSize: fontSizes[size],
+          },
         }}
       >
         {component}

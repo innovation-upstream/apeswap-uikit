@@ -1,12 +1,21 @@
 import { ThemeUIStyleObject } from "theme-ui";
-import { keyframes } from "@emotion/react";
+import { fontSizes } from "./Dropdown.interface";
 
 const styles: Record<string, ThemeUIStyleObject> = {};
 
+interface Props {
+  active: boolean;
+  size: keyof typeof fontSizes;
+}
+
 export const dynamicStyles: Record<string, (props: any) => ThemeUIStyleObject> = {
-  dropdownItem: (active: boolean) => ({
+  dropdownItem: ({ active, size }: Props) => ({
     display: "inline-block",
     marginLeft: active ? "-10px" : undefined,
+    fontSize: fontSizes[size],
+    "*": {
+      fontSize: fontSizes[size],
+    },
   }),
 };
 
