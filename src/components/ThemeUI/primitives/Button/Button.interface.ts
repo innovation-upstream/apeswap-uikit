@@ -1,21 +1,21 @@
 import { ButtonProps } from "theme-ui";
 
-export const size = {
+export const sizes = {
   SMALL: "small",
   MEDIUM: "normal",
   BIG: "large",
 } as const;
 
 export const buttonFontSizes = {
-  [size.SMALL]: 8,
-  [size.MEDIUM]: 16,
-  [size.BIG]: 32,
+  [sizes.SMALL]: 1,
+  [sizes.MEDIUM]: 3,
+  [sizes.BIG]: 6,
 };
 
 export const buttonPadding = {
-  [size.SMALL]: "5px 16px",
-  [size.MEDIUM]: "10px 32.5px",
-  [size.BIG]: "20px 65px",
+  [sizes.SMALL]: { x: 7, y: 1 },
+  [sizes.MEDIUM]: { x: 15, y: 4 },
+  [sizes.BIG]: { x: 16, y: 6 },
 };
 
 export const variants = {
@@ -23,7 +23,7 @@ export const variants = {
   SECONDARY: "secondary",
 } as const;
 
-type sizeProps = typeof size[keyof typeof size];
+type sizeProps = typeof sizes[keyof typeof sizes];
 type variantProps = typeof variants[keyof typeof variants];
 
 export interface UIButtonProps extends ButtonProps {

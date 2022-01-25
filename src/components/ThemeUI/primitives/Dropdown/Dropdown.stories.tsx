@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import { Text } from "theme-ui";
+import { ThemeUIText } from "../index";
 import Dropdown from "./Dropdown";
 import DropdownItem from "./DropdownItem";
-import StorybookLayout from "../../StorybookLayout/StorybookLayout";
+import StorybookLayout from "../../../StorybookLayout/StorybookLayout";
 
 export default {
   title: "ThemeUI/Components/Primitives/Dropdown",
@@ -13,21 +13,24 @@ export default {
       options: ["light", "dark"],
       control: { type: "inline-radio" },
     },
+    size: {
+      control: { type: "select" },
+    },
   },
 };
 
 export const dropdown = (args) => {
-  const Title = () => <Text sx={{ color: "brown" }}>Dropdown</Text>;
+  const Title = () => <ThemeUIText sx={{ color: "brown" }}>Dropdown</ThemeUIText>;
 
   return (
     <StorybookLayout {...args}>
       <Router>
         <Dropdown {...args} component={<Title />}>
-          <DropdownItem url="/" active>
-            <Text sx={{ color: "brown" }}>Item 1 Selected link</Text>
+          <DropdownItem url="/" active {...args}>
+            <ThemeUIText sx={{ color: "brown" }}>Item 1 Selected link</ThemeUIText>
           </DropdownItem>
-          <DropdownItem>
-            <Text sx={{ color: "brown" }}>Item 2</Text>
+          <DropdownItem {...args}>
+            <ThemeUIText sx={{ color: "brown" }}>Item 2</ThemeUIText>
           </DropdownItem>
         </Dropdown>
       </Router>
@@ -37,4 +40,5 @@ export const dropdown = (args) => {
 
 dropdown.args = {
   colorMode: "light",
+  size: "normal",
 };

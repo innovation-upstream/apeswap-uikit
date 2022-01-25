@@ -1,14 +1,14 @@
 /** @jsxImportSource theme-ui */
 import React from "react";
-import { Box, Text } from "theme-ui";
+import { Box } from "theme-ui";
 import { Link } from "react-router-dom";
-import { DropdownItemProps } from "./Dropdown.interface";
+import { DropdownItemProps, dropdownItemPadding, sizes } from "./Dropdown.interface";
 import { dynamicStyles } from "./styles";
 
-const Element: React.FC<DropdownItemProps> = ({ onClick, url, active, children }) => {
-  const style = dynamicStyles.dropdownItem(active);
+const Element: React.FC<DropdownItemProps> = ({ onClick, url, active, size, children }) => {
+  const style = dynamicStyles.dropdownItem({ active, size });
   return url ? (
-    <Link to={url} sx={style}>
+    <Link to={url} onClick={onClick} sx={style}>
       {children}
     </Link>
   ) : (
@@ -18,13 +18,13 @@ const Element: React.FC<DropdownItemProps> = ({ onClick, url, active, children }
   );
 };
 
-const DropdownItem: React.FC<DropdownItemProps> = ({ onClick, url, active, children }) => {
+const DropdownItem: React.FC<DropdownItemProps> = ({ onClick, url, active, size = sizes.MEDIUM, children }) => {
   return (
     <Box
-      px={21}
-      py="6px"
       as="li"
       sx={{
+        px: dropdownItemPadding[size].x,
+        py: dropdownItemPadding[size].y,
         listStyleType: active ? "disc" : "none",
         cursor: "pointer",
         color: "brown",
@@ -34,7 +34,7 @@ const DropdownItem: React.FC<DropdownItemProps> = ({ onClick, url, active, child
         },
       }}
     >
-      <Element url={url} onClick={onClick} active={active}>
+      <Element url={url} onClick={onClick} active={active} size={size}>
         {children}
       </Element>
     </Box>

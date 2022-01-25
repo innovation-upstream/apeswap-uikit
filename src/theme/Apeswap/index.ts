@@ -18,9 +18,9 @@ const Apeswap: Theme = {
       fontFamily: "poppins",
       fontWeight: "bold",
     },
-    large: { fontSize: 22, lineHeight: "33px" },
-    normal: { fontSize: 16, lineHeight: "24px" },
-    small: { fontSize: 12, lineHeight: "18px" },
+    large: { fontSize: 6, lineHeight: "33px" },
+    normal: { fontSize: 3, lineHeight: "24px" },
+    small: { fontSize: 1, lineHeight: "18px" },
   },
   styles: {
     root: {
