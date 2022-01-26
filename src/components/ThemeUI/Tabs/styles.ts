@@ -11,7 +11,7 @@ const styles: Record<string, ThemeUIStyleObject> = {
     borderRadius: "10px",
   },
   tabPanel: {
-    padding: '1em 0.5em'
+    padding: "1em 0.5em",
   },
 };
 
