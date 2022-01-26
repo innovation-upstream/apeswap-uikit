@@ -10,6 +10,9 @@ const styles: Record<string, ThemeUIStyleObject> = {
   tab: {
     borderRadius: "10px",
   },
+  tabPanel: {
+    padding: '1em 0.5em'
+  },
 };
 
 export default styles;

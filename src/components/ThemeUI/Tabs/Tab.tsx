@@ -1,20 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "theme-ui";
 import styles from "./styles";
+import { tabFontSizes, tabPadding, TabProps } from "./Tab.interface";
 
-const Tab: React.FC<any> = ({ currentTab, onChange, setCurrentTab, index, label }) => {
-  const handleClick = () => {
-    setCurrentTab(index);
-    // onChange(index);
-  };
-
+const Tab: React.FC<TabProps> = ({ activeTab, onClick, index, label, size = "normal" }) => {
   return (
     <Button
       sx={{
         ...styles.tab,
-        background: currentTab === index ? "yellow" : "transparent",
+        fontSize: tabFontSizes[size],
+        padding: tabPadding[size],
+        background: activeTab === index ? "yellow" : "transparent",
       }}
-      onClick={handleClick}
+      onClick={() => onClick(index)}
     >
       {label}
     </Button>
