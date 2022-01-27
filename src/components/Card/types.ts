@@ -1,26 +1,14 @@
-import { HTMLAttributes } from "react";
-import { SpaceProps } from "styled-system";
-import { Colors } from "../../theme/types";
+import { CardProps as ThemeUICardProps } from "theme-ui";
+import { colorProps } from "../../theme/Apeswap/types";
 
-export interface CardRibbonProps {
-  variantColor?: keyof Colors;
-  text: string;
-  fontFamily?: string;
-}
+export const variants = {
+  PRIMARY: "primary",
+  SECONDARY: "secondary",
+} as const;
 
-export type CardTheme = {
-  background: string;
-  boxShadow: string;
-  boxShadowActive: string;
-  boxShadowSuccess: string;
-  boxShadowWarning: string;
-  cardHeaderBackground: string;
-};
+type variantProps = typeof variants[keyof typeof variants];
 
-export interface CardProps extends SpaceProps, HTMLAttributes<HTMLDivElement> {
-  isActive?: boolean;
-  isSuccess?: boolean;
-  isWarning?: boolean;
-  isDisabled?: boolean;
-  ribbon?: React.ReactNode;
+export interface CardProps extends ThemeUICardProps {
+  variant?: variantProps;
+  background?: colorProps;
 }

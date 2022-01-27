@@ -69,7 +69,7 @@ const StyledButtonSquare = styled.button<ButtonSquareProps>`
   opacity: ${({ isLoading }) => (isLoading ? 0.5 : 1)};
 
   &:hover:not(:disabled):not(.button--disabled):not(:active) {
-    background-color: ${getButtonVariantProp("backgroundHover")};
+    background-color: inherit;
   }
 
   &:focus:not(:active) {
@@ -77,7 +77,7 @@ const StyledButtonSquare = styled.button<ButtonSquareProps>`
   }
 
   &:active {
-    box-shadow: ${getButtonVariantProp("boxShadowActive")};
+    box-shadow: inherit;
   }
 
   ${getDisabledStyles}

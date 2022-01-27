@@ -1,11 +1,5 @@
-import styled from "styled-components";
-import { flexbox, space } from "styled-system";
-import { FlexProps } from "./types";
+// TODO: remove during cleanup
 
-const Flex = styled.div<FlexProps>`
-  display: flex;
-  ${flexbox}
-  ${space}
-`;
+import { Flex } from "theme-ui";
 
 export default Flex;
