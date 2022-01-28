@@ -31,7 +31,17 @@ const Dropdown: React.FC<DropdownProps> = ({ component, children, size = sizes.M
         {component}
         <IconSVG icon="caret" direction={open ? "up" : "down"} />
       </Flex>
-      {open && <ul>{children}</ul>}
+      <Box
+        as="ul"
+        sx={{
+          transition: "transform .1s ease-out, height .1s ease-out, opacity .1s ease-out",
+          transform: open ? "translateY(0)" : "translateY(-50%)",
+          height: open ? "fit-content" : "0px",
+          opacity: open ? "1" : "0",
+        }}
+      >
+        {children}
+      </Box>
     </Box>
   );
 };

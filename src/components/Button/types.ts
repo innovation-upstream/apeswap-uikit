@@ -23,6 +23,11 @@ export const variants = {
   SECONDARY: "secondary",
 } as const;
 
+export const backgroundColors = {
+  [variants.PRIMARY]: "primaryButtonHover",
+  [variants.SECONDARY]: "secondaryButtonHover",
+};
+
 export type sizeProps = typeof sizes[keyof typeof sizes];
 export type variantProps = typeof variants[keyof typeof variants];
 
