@@ -10,15 +10,14 @@ interface Props extends LinkProps {
 
 const TooltipLink: React.FC<Props> = ({ url, children }) => {
   return (
-    
-      <Router>
-        <Link to={url}>
-          <Flex sx={style.linkWrapper}>
-            {children}
-            <TooltipLinkIco />
-          </Flex>
-        </Link>
-      </Router>
+    <Router>
+      <Link to={url}>
+        <Flex sx={style.linkWrapper}>
+          {children}
+          <TooltipLinkIco />
+        </Flex>
+      </Link>
+    </Router>
   );
 };
 

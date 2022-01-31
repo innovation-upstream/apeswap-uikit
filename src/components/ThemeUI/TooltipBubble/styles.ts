@@ -4,7 +4,7 @@ const baseStyle = {
   p: 9,
   borderRadius: "normal",
   background: "navbar",
-//   boxShadow: "0px 25px 55px 20px rgba(0, 0, 0, 0.1)",
+  //   boxShadow: "0px 25px 55px 20px rgba(0, 0, 0, 0.1)",
 };
 
 const styles: Record<string, ThemeUIStyleObject> = {
@@ -72,16 +72,16 @@ const styles: Record<string, ThemeUIStyleObject> = {
     },
   },
   linkWrapper: {
-      justifyContent: "center",
-      gap: 3,
-      alignItems: "center",
-      fontWeight: "bold",
-      textDecoration: "underline",
-      svg: {
-          fill: "brown",
-          path: "brown"
-      }
-  }
+    justifyContent: "center",
+    gap: 3,
+    alignItems: "center",
+    fontWeight: "bold",
+    textDecoration: "underline",
+    svg: {
+      fill: "brown",
+      path: "brown",
+    },
+  },
 };
 
 export default styles;
