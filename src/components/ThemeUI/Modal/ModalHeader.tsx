@@ -5,9 +5,10 @@ import Close from "../IconSVG/icons/Close";
 import CancelButton from "./CancelButton";
 import { ModalProps } from ".";
 
-const ModalHeader: React.FC<ModalProps> = ({ children, handleClose }) => {
+const ModalHeader: React.FC<ModalProps> = ({ children, handleClose, ...props }) => {
+  
   return (
-    <Flex sx={style.modalHead}>
+    <Flex {...props} sx={style.modalHead}>
       {children}
       <CancelButton handleClose={handleClose}>
         <Close />

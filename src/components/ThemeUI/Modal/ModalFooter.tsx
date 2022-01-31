@@ -4,11 +4,11 @@ import CancelButton from "./CancelButton";
 import { ModalProps } from "./Modal.interface";
 import styles from "./styles";
 
-const ModalFooter: React.FC<ModalProps> = ({ children }) => {
+const ModalFooter: React.FC<ModalProps> = ({ children, handleClose }) => {
   return (
     <Flex sx={styles.modalFooter}>
       {children}
-      <CancelButton handleClose={() => null}>Cancel</CancelButton>
+      <CancelButton handleClose={handleClose}>Cancel</CancelButton>
     </Flex>
   );
 };

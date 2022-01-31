@@ -1,4 +1,5 @@
 export interface ModalProps {
-    open?: boolean;
-    handleClose?: () => void;
+  open?: boolean;
+  handleClose?: () => void;
+  minWidth?: string;
 }
