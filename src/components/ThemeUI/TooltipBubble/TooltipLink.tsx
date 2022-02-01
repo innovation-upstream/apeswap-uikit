@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Box, LinkProps } from "theme-ui";
+import { Flex, LinkProps } from "theme-ui";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import TooltipLinkIco from "../IconSVG/icons/TooltipLinkIco";
 import style from "./styles";
