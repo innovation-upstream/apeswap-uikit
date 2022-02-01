@@ -1,3 +1,3 @@
 export interface IconButtonProps {
-    variant?: "primary" | "transparent";
+  variant?: "primary" | "transparent";
 }

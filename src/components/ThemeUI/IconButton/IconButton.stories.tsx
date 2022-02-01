@@ -4,7 +4,6 @@ import IconButton from "./IconButton";
 import StorybookLayout from "../../StorybookLayout/StorybookLayout";
 import { IconSVG } from "../IconSVG";
 
-
 export default {
   title: "ThemeUI/Components/IconButton",
   component: IconButton,
@@ -22,7 +21,7 @@ export const Default = (args: any) => (
       <IconSVG color="white" icon="twitter" />
     </IconButton>
     <Box m="10px" />
-    <IconButton >
+    <IconButton>
       <IconSVG color="white" icon="send" />
     </IconButton>
   </StorybookLayout>

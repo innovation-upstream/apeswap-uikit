@@ -2,7 +2,7 @@ export const icons = {
   CARET: "caret",
   EXTERNAL: "external",
   TWITTER: "twitter",
-  SEND: "send"
+  SEND: "send",
 } as const;
 
 export const directions = {
