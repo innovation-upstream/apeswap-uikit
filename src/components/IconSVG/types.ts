@@ -1,6 +1,8 @@
 export enum icons {
   CARET = "caret",
   EXTERNAL = "external",
+  ERROR = "error",
+  OPEN_NEW = "open-new",
 }
 
 export enum directions {
