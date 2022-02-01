@@ -18,13 +18,13 @@ export default {
 
 export const Default = (args: any) => (
   <StorybookLayout {...args}>
-    <TooltipBubble {...args} variant={4}>
+    <TooltipBubble {...args} variant="4">
       <Text>Just Text. Variant 4</Text>
     </TooltipBubble>
 
     <Box m={4}>{}</Box>
 
-    <TooltipBubble {...args} variant={3}>
+    <TooltipBubble {...args} variant="3">
       <Text>Just Text. Variant 3</Text>
       <Box mt="10px">
         <TooltipLink url="">Urlhere</TooltipLink>

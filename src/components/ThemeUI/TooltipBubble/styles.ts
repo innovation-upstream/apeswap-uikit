@@ -7,6 +7,57 @@ const baseStyle = {
   //   boxShadow: "0px 25px 55px 20px rgba(0, 0, 0, 0.1)",
 };
 
+const baseDirectionArrow = {
+  content: '""',
+  display: "block",
+  width: 0,
+  border: "12px solid transparent",
+};
+
+const bottomRight = {
+  bottom: 2,
+  ...baseDirectionArrow,
+  borderBottom: 0,
+  borderTopWidth: "15px",
+  borderTopStyle: "solid",
+  borderTopColor: "navbar",
+  right: "3%",
+  transform: "translate(-50%, calc(100% + 5px))",
+};
+
+const bottomLeft = {
+  bottom: 2,
+  ...baseDirectionArrow,
+  borderBottom: 0,
+  borderTopWidth: "15px",
+  borderTopStyle: "solid",
+  borderTopColor: "navbar",
+  left: "12%",
+  transform: "translate(-50%, calc(100% + 5px))",
+};
+
+const topRight = {
+  top: 2,
+  ...baseDirectionArrow,
+  borderTop: 0,
+  borderBottomWidth: "15px",
+  borderBottomStyle: "solid",
+  borderBottomColor: "navbar",
+  right: "3%",
+  transform: "translate(-50%, calc(-100% - 5px))",
+};
+
+const topLeft = {
+  top: 2,
+  ...baseDirectionArrow,
+  borderTop: 0,
+  borderBottomWidth: "15px",
+  borderBottomStyle: "solid",
+  borderBottomColor: "navbar",
+  left: "12%",
+  transform: "translate(-50%, calc(-100% - 5px))",
+};
+
 const styles: Record<string, ThemeUIStyleObject> = {
   1: {
     position: "relative",
@@ -15,20 +66,6 @@ const styles: Record<string, ThemeUIStyleObject> = {
     lineHeight: "18px",
     fontWeight: "normal",
     ...baseStyle,
-    "&::before": {
-      content: '""',
-      position: "absolute",
-      display: "block",
-      width: 0,
-      bottom: 2,
-      right: "3%",
-      border: "12px solid transparent",
-      borderBottom: 0,
-      borderTopColor: "navbar",
-      borderTopWidth: "15px",
-      borderTopStyle: "solid",
-      transform: "translate(-50%, calc(100% + 5px))",
-    },
   },
   2: {
     position: "relative",
@@ -37,20 +74,6 @@ const styles: Record<string, ThemeUIStyleObject> = {
     lineHeight: "18px",
     fontWeight: "normal",
     ...baseStyle,
-    "&::before": {
-      content: '""',
-      position: "absolute",
-      display: "block",
-      width: 0,
-      bottom: 2,
-      right: "3%",
-      border: "12px solid transparent",
-      borderBottom: 0,
-      borderTopColor: "navbar",
-      borderTopWidth: "15px",
-      borderTopStyle: "solid",
-      transform: "translate(-50%, calc(100% + 5px))",
-    },
   },
   3: {
     position: "relative",
@@ -59,20 +82,6 @@ const styles: Record<string, ThemeUIStyleObject> = {
     lineHeight: "18px",
     fontWeight: "normal",
     ...baseStyle,
-    "&::before": {
-      content: '""',
-      position: "absolute",
-      display: "block",
-      width: 0,
-      bottom: 2,
-      right: "3%",
-      border: "12px solid transparent",
-      borderBottom: 0,
-      borderTopColor: "navbar",
-      borderTopWidth: "15px",
-      borderTopStyle: "solid",
-      transform: "translate(-50%, calc(100% + 5px))",
-    },
   },
   4: {
     position: "relative",
@@ -81,19 +90,29 @@ const styles: Record<string, ThemeUIStyleObject> = {
     lineHeight: "24px",
     fontWeight: "normal",
     ...baseStyle,
+  },
+  bottomRight: {
     "&::before": {
-      content: '""',
       position: "absolute",
-      display: "block",
-      width: 0,
-      bottom: 2,
-      right: "3%",
-      border: "12px solid transparent",
-      borderBottom: 0,
-      borderTopColor: "navbar",
-      borderTopWidth: "15px",
-      borderTopStyle: "solid",
-      transform: "translate(-50%, calc(100% + 5px))",
+      ...bottomRight,
+    },
+  },
+  bottomLeft: {
+    "&::before": {
+      position: "absolute",
+      ...bottomLeft,
+    },
+  },
+  topRight: {
+    "&::before": {
+      position: "absolute",
+      ...topRight,
+    },
+  },
+  topLeft: {
+    "&::before": {
+      position: "absolute",
+      ...topLeft,
     },
   },
   linkWrapper: {
