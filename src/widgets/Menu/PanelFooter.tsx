@@ -102,7 +102,7 @@ const PanelFooter: React.FC<Props> = ({
             const mr = index < socials.length - 1 ? "12px" : 0;
             if (social.items) {
               return (
-                <Dropdown key={social.label} position="top" target={<Icon {...iconProps} mr={mr} />}>
+                <Dropdown key={social.label} position="top" component={<Icon {...iconProps} mr={mr} />}>
                   {social.items.map((item) => (
                     <Link external key={item.label} href={item.href} aria-label={item.label} color="text">
                       {item.label}
@@ -133,7 +133,7 @@ const PanelFooter: React.FC<Props> = ({
         {langs && (
           <Dropdown
             position="top-right"
-            target={
+            component={
               <Button variant="text" startIcon={<LanguageIcon color="text" width="24px" />}>
                 <Text color="text" bold>
                   {currentLang?.toUpperCase()}
