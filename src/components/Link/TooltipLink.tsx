@@ -19,8 +19,8 @@ const styles: Record<string, ThemeUIStyleObject> = {
       fill: "brown",
       path: "brown",
     },
-  }
-  }
+  },
+};
 
 const TooltipLink: React.FC<Props> = ({ url, children }) => {
   return (
