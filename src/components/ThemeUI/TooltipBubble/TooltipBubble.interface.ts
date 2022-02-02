@@ -12,5 +12,9 @@ type directionProps = typeof directions[keyof typeof directions];
 export interface TooltipProps extends BoxProps {
   variant?: "1" | "2" | "3" | "4";
   maxWidth?: string;
-  direction?: directionProps;
+  position?: "fixed" | "absolute"
+  top?: string;
+  bottom?: string;
+  right?: string;
+  left?: string;
 }

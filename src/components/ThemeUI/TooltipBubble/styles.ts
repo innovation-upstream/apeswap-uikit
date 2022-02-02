@@ -4,7 +4,8 @@ const baseStyle = {
   p: 9,
   borderRadius: "normal",
   background: "navbar",
-  //   boxShadow: "0px 25px 55px 20px rgba(0, 0, 0, 0.1)",
+  width: "100%",
+  zIndex: "modal",
 };
 
 const baseDirectionArrow = {
@@ -60,7 +61,6 @@ const topLeft = {
 
 const styles: Record<string, ThemeUIStyleObject> = {
   1: {
-    position: "relative",
     color: "brown",
     fontSize: 0,
     lineHeight: "18px",
@@ -68,7 +68,6 @@ const styles: Record<string, ThemeUIStyleObject> = {
     ...baseStyle,
   },
   2: {
-    position: "relative",
     color: "brown",
     fontSize: 0,
     lineHeight: "18px",
@@ -76,7 +75,6 @@ const styles: Record<string, ThemeUIStyleObject> = {
     ...baseStyle,
   },
   3: {
-    position: "relative",
     color: "brown",
     fontSize: 0,
     lineHeight: "18px",
@@ -84,7 +82,6 @@ const styles: Record<string, ThemeUIStyleObject> = {
     ...baseStyle,
   },
   4: {
-    position: "relative",
     color: "brown",
     fontSize: 2,
     lineHeight: "24px",

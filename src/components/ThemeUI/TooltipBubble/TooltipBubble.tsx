@@ -6,10 +6,16 @@ import style from "./styles";
 const TooltipBubble: React.FC<TooltipProps> = ({
   variant = "4",
   maxWidth = "250px",
-  direction = "bottomRight",
+  position = "fixed",
+  top,
+  left,
+  right,
+  bottom,
   children,
 }) => {
-  return <Box sx={{ maxWidth, ...style[variant], ...style[`${direction}`] }}>{children}</Box>;
+  return (
+    <Box sx={{ maxWidth, position, top, left, right, bottom, ...style[variant], ...style.bottomRight }}>{children}</Box>
+  );
 };
 
 export default TooltipBubble;
