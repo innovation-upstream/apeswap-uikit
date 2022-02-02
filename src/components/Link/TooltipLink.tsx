@@ -1,8 +1,6 @@
 import React from "react";
-import { Flex, LinkProps, ThemeUIStyleObject } from "theme-ui";
-import { BrowserRouter as Router, Link } from "react-router-dom";
-import TooltipLinkIco from "../ThemeUI/IconSVG/icons/TooltipLinkIco";
-import style from "../ThemeUI/TooltipBubble/styles";
+import { Flex, LinkProps, ThemeUIStyleObject, Link } from "theme-ui";
+import { IconSVG } from "../ThemeUI/IconSVG";
 
 interface Props extends LinkProps {
   url: string;
@@ -22,16 +20,14 @@ const styles: Record<string, ThemeUIStyleObject> = {
   },
 };
 
-const TooltipLink: React.FC<Props> = ({ url, children }) => {
+const TooltipLink: React.FC<Props> = ({ url, children, ...props }) => {
   return (
-    <Router>
-      <Link to={url}>
-        <Flex sx={styles.linkWrapper}>
-          {children}
-          <TooltipLinkIco />
-        </Flex>
+    <Flex sx={styles.linkWrapper}>
+      <Link href={url} {...props}>
+        {children}
       </Link>
-    </Router>
+      <IconSVG icon="external" color="brown" />
+    </Flex>
   );
 };
 

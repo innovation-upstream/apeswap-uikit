@@ -25,8 +25,12 @@ export const Default = (args: any) => (
     <TooltipBubble {...args} variant="3" bottom={10}>
       <Text>Just Text. Variant 3</Text>
       <Box mt="10px">
-        <TooltipLink url="">Urlhere</TooltipLink>
-        <TooltipLink url="">Urlhere</TooltipLink>
+        <TooltipLink url="https://apeswap.finance" target="_blank">
+          Urlhere
+        </TooltipLink>
+        <TooltipLink url="https://apeswap.finance" target="_blank">
+          Urlhere
+        </TooltipLink>
       </Box>
     </TooltipBubble>
 
@@ -40,8 +44,12 @@ export const Default = (args: any) => (
         <Text>BANANA-BNB LP</Text>
       </TooltipFlex>
       <Box mt="10px">
-        <TooltipLink url="">Urlhere</TooltipLink>
-        <TooltipLink url="">Urlhere</TooltipLink>
+        <TooltipLink url="https://google.com" target="_blank">
+          Urlhere
+        </TooltipLink>
+        <TooltipLink url="https://google.com" target="_blank">
+          Urlhere
+        </TooltipLink>
       </Box>
     </TooltipBubble>
 
