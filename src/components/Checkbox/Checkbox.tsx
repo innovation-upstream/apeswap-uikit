@@ -13,10 +13,9 @@ const getScale = ({ scale }: CheckboxProps) => {
   }
 };
 
-const Checkbox: React.FC<CheckboxProps> = ({ scale=scales.SM, ...props }) => {
-
-  const scaleSize = getScale({scale});
-  const svgScale = scale === 'sm' ? 13 : 21;
+const Checkbox: React.FC<CheckboxProps> = ({ scale = scales.SM, ...props }) => {
+  const scaleSize = getScale({ scale });
+  const svgScale = scale === "sm" ? 13 : 21;
 
   return (
     <span sx={{ width: scaleSize, height: scaleSize, ...style.default }}>

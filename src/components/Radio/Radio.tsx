@@ -24,9 +24,9 @@ const getCheckedScale = ({ scale }: RadioProps) => {
   }
 };
 
-const Radio: React.FC<RadioProps> = ({scale=scales.SM, ...props}) => {
+const Radio: React.FC<RadioProps> = ({ scale = scales.SM, ...props }) => {
   const scaleSize = getScale({ scale });
-  const checkedScale = getCheckedScale({scale})
+  const checkedScale = getCheckedScale({ scale });
 
   return (
     <span sx={{ display: "block", width: scaleSize, height: scaleSize, position: "relative" }}>
@@ -34,6 +34,6 @@ const Radio: React.FC<RadioProps> = ({scale=scales.SM, ...props}) => {
       <span sx={{ width: checkedScale, height: checkedScale }} />
     </span>
   );
-}
+};
 
 export default Radio;
