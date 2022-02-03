@@ -29,7 +29,7 @@ const styles: Record<string, ThemeUIStyleObject> = {
     position: "absolute",
     top: 0,
     bottom: 0,
-    margin: "auto"
+    margin: "auto",
   },
   chevronWrapper: {
     padding: "3px",
@@ -59,7 +59,7 @@ const styles: Record<string, ThemeUIStyleObject> = {
     position: "absolute",
     animation: `${slideOut} 1.8s forwards`,
     transition: "all 2s ease-in-out",
-    objectFit: "cover"
+    objectFit: "cover",
   },
   activeSlider: {
     height: "100%",
@@ -69,7 +69,7 @@ const styles: Record<string, ThemeUIStyleObject> = {
     animation: `${slideIn} .5s forwards`,
     opacity: 1,
     zIndex: 2,
-    objectFit: "cover"
+    objectFit: "cover",
   },
   indicatorMainWrapper: {
     position: "absolute",
