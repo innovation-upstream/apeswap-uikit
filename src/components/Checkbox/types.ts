@@ -1,3 +1,5 @@
+import { CheckboxProps as ThemeUiCheckboxProps } from "theme-ui";
+
 export const scales = {
   SM: "sm",
   MD: "md",
@@ -5,6 +7,7 @@ export const scales = {
 
 export type Scales = typeof scales[keyof typeof scales];
 
-export interface CheckboxProps {
+export interface CheckboxProps extends ThemeUiCheckboxProps {
   scale?: Scales;
+  handleChange?: () => void;
 }
