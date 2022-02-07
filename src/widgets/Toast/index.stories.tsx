@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { sample } from "lodash";
-import { alertVariants } from "../../components/Alert";
+import {alertVariants } from "../../components/Alert";
 import Button from "../../components/Button/Button";
 import ToastContainer from "./ToastContainer";
 
