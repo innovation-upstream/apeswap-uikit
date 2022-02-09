@@ -1,16 +1,7 @@
-import React from "react";
-import { Link, BrowserRouter as Router } from "react-router-dom";
-import { Text } from "../Text";
-import { Button, IconButton, TextIconButton } from "../Button";
+import React, { useState } from "react";
 import TopMenu from "./TopMenu";
 import StorybookLayout from "../StorybookLayout/StorybookLayout";
-import { IconSVG } from "../IconSVG";
-import LeftContainer from "./LeftContainer";
-import RightContainer from "./RightContainer";
 import { icons } from "../IconSVG/types";
-import colorValues from "../../theme/Apeswap/types";
-import LogoVariant from "../LogoVariant/LogoVariant";
-import Modal from "../../widgets/Modal/Modal";
 
 export default {
   title: "Components/TopMenu",
@@ -23,31 +14,39 @@ export default {
   },
 };
 
-export const topMenu = (args: any) => {
+const networks = [
+  {
+    name: "Polygon",
+    icon: icons.POLYGON,
+    chainId: 3232,
+  },
+  {
+    name: "BSC",
+    icon: icons.BSC,
+    chainId: 4343,
+  },
+];
+
+export const Default = (args: any) => {
+  const [active, setActive] = useState(4343);
+  const [collapse, setCollapse] = useState(false);
+  const handleCollapse = () => setCollapse(!collapse);
   return (
     <StorybookLayout {...args}>
-      <TopMenu {...args}>
-        <LeftContainer>
-          <IconButton variant="transparent" icon="collapse" color="brown" />
-        </LeftContainer>
-        <RightContainer>
-          <TextIconButton>
-            <IconSVG icon={icons.POLYGON} color={`${colorValues.brown}`} />
-            <Text color={`${colorValues.brown}`}>Polygon</Text>
-            <IconSVG icon={icons.CARET} />
-          </TextIconButton>
-          <Button>CONNECT</Button>
-          <Router>
-            <Link to="/">
-              <LogoVariant {...args} />
-            </Link>
-          </Router>
-        </RightContainer>
-      </TopMenu>
+      <TopMenu
+        networks={networks}
+        activeNetwork={active}
+        setActiveNetwork={setActive}
+        profileLink="apeswap.finance/nft"
+        collapse={collapse}
+        handleCollapse={handleCollapse}
+        {...args}
+      />
     </StorybookLayout>
   );
 };
 
-topMenu.args = {
+Default.args = {
   colorMode: "light",
+  hideLogo: false,
 };

@@ -1,11 +1,16 @@
 import { ThemeUIStyleObject } from "theme-ui";
 
+const defaultStyle = {
+  padding: "10px",
+  border: "none",
+};
+
 const styles: Record<string, ThemeUIStyleObject> = {
-  default: {
-    padding: "10px",
-    border: "none",
+  primary: {
+    ...defaultStyle,
   },
   transparent: {
+    ...defaultStyle,
     backgroundColor: "transparent",
     backgroundRepeat: "no-repeat",
     padding: "0px",
@@ -14,6 +19,9 @@ const styles: Record<string, ThemeUIStyleObject> = {
     svg: {
       background: "transparent",
     },
+  },
+  circular: {
+    padding: "1px",
   },
   flex: {
     display: "inline-flex",

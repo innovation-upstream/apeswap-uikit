@@ -8,12 +8,12 @@ export interface Props {
   colorMode?: "light" | "dark";
 }
 
-const LogoVariant: React.FC<Props> = ({ colorMode = "light" }) => {
+const ProfileIcon: React.FC<Props> = ({ colorMode = "light" }) => {
   return (
     <Box sx={style.container}>
-      <IconSVG icon={colorMode === "light" ? icons.LOGOLIGHT : icons.LOGODARK} />
+      <IconSVG icon={colorMode === "light" ? icons.PROFILELIGHT : icons.PROFILEDARK} />
     </Box>
   );
 };
 
-export default LogoVariant;
+export default ProfileIcon;

@@ -2,7 +2,7 @@
 import React from "react";
 import { IconProps } from "./types";
 
-const LogoDark: React.FC<IconProps> = ({ width }) => {
+const ProfileDark: React.FC<IconProps> = ({ width }) => {
   return (
     <svg width={width || "30"} height="auto" viewBox="0 0 30 35" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -49,4 +49,4 @@ const LogoDark: React.FC<IconProps> = ({ width }) => {
   );
 };
 
-export default LogoDark;
+export default ProfileDark;

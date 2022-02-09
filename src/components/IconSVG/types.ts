@@ -9,10 +9,13 @@ export enum icons {
   CLOSE = "close",
   COLLAPSE = "collapse",
   TEXTLOGO = "textLogo",
-  LOGOLIGHT = "logoLight",
-  LOGODARK = "logoDark",
+  PROFILELIGHT = "profileLight",
+  PROFILEDARK = "profileDark",
+  PROFILEICON = "profileIcon",
   POLYGON = "polygon",
   BSC = "bsc",
+  LOGO = "logo",
+  HAMBURGER = "hamburger",
 }
 
 export enum directions {

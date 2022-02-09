@@ -11,9 +11,10 @@ const styles: Record<string, ThemeUIStyleObject> = {
   leftContainer: {
     display: "flex",
     alignItems: "center",
-    gap: 8,
+    gap: [4, 8],
     "button:first-of-type": {
-      padding: "6px 10px",
+      px: [null, null, "6px"],
+      py: [null, null, "10px"],
       borderRadius: "normal",
       "&:hover": {
         background: "lvl1",
@@ -24,7 +25,10 @@ const styles: Record<string, ThemeUIStyleObject> = {
     display: "flex",
     alignItems: "center",
     justifyContent: "end",
-    gap: 8,
+    gap: [4, 8],
+    "button:nth-of-type(1)": {
+      display: ["none", "none", "inline-flex"],
+    },
   },
 };
 

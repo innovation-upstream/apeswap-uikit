@@ -2,7 +2,7 @@
 import React from "react";
 import { IconProps } from "./types";
 
-const LogoLight: React.FC<IconProps> = ({ width }) => {
+const ProfileLight: React.FC<IconProps> = ({ width }) => {
   return (
     <svg
       width={width || "30"}
@@ -56,4 +56,4 @@ const LogoLight: React.FC<IconProps> = ({ width }) => {
   );
 };
 
-export default LogoLight;
+export default ProfileLight;

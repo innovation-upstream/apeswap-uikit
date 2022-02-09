@@ -1,10 +1,10 @@
 import React from "react";
-import LogoVariant from "./LogoVariant";
+import Progress from "./Progress";
 import StorybookLayout from "../StorybookLayout/StorybookLayout";
 
 export default {
-  title: "Components/LogoVariant",
-  component: LogoVariant,
+  title: "Components/Progress",
+  component: Progress,
   argTypes: {
     colorMode: {
       options: ["light", "dark"],
@@ -13,14 +13,17 @@ export default {
   },
 };
 
-export const logoVariant = (args: any) => {
+export const Default = (args: any) => {
   return (
     <StorybookLayout {...args}>
-      <LogoVariant {...args} />
+      <div style={{ padding: "32px", width: "400px" }}>
+        <Progress {...args} />
+      </div>
     </StorybookLayout>
   );
 };
 
-logoVariant.args = {
-  colorMode: "light",
+Default.args = {
+  height: "15px",
+  to: 70,
 };
