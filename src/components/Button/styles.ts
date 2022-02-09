@@ -15,6 +15,17 @@ const styles: Record<string, ThemeUIStyleObject> = {
       background: "transparent",
     },
   },
+  flex: {
+    display: "inline-flex",
+    alignItems: "center",
+    gap: 4,
+    borderRadius: "normal",
+    cursor: "pointer",
+    padding: "10px 20px 10px 19px",
+    span: {
+      fontWeight: "bold",
+    },
+  },
 };
 
 export default styles;
