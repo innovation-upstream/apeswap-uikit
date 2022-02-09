@@ -25,7 +25,7 @@ const styles: Record<string, ThemeUIStyleObject> = {
     alignItems: "center",
     justifyContent: "end",
     gap: 8,
-  }
+  },
 };
 
 export default styles;

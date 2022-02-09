@@ -5,7 +5,6 @@ import { IconButtonProps, iconButtonVariants as variants } from "./types";
 import style from "./styles";
 import colorValues from "../../theme/Apeswap/types";
 
-
 const TextIconButton: React.FC<IconButtonProps> = ({
   variant = variants.PRIMARY,
   children,

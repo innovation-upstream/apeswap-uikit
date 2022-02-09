@@ -2,7 +2,20 @@
 import React from "react";
 import { IconSVGProps, icons } from "./types";
 import { dynamicStyles } from "./styles";
-import { Caret, External, Twitter, Send, Error, Close, Collapse, TextLogo, LogoLight, LogoDark, Polygon, BSC } from "./icons";
+import {
+  Caret,
+  External,
+  Twitter,
+  Send,
+  Error,
+  Close,
+  Collapse,
+  TextLogo,
+  LogoLight,
+  LogoDark,
+  Polygon,
+  BSC,
+} from "./icons";
 import { IconStyles } from "./icons/types";
 
 const IconSVG: React.FC<IconSVGProps> = ({ icon, ...props }) => {

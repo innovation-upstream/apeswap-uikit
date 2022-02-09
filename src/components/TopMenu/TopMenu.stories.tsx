@@ -24,7 +24,6 @@ export default {
 };
 
 export const topMenu = (args: any) => {
-
   return (
     <StorybookLayout {...args}>
       <TopMenu {...args}>

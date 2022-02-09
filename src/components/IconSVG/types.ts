@@ -12,7 +12,7 @@ export enum icons {
   LOGOLIGHT = "logoLight",
   LOGODARK = "logoDark",
   POLYGON = "polygon",
-  BSC = "bsc"
+  BSC = "bsc",
 }
 
 export enum directions {

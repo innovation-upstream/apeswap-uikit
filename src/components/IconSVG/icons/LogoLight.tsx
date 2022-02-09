@@ -3,8 +3,6 @@ import React from "react";
 import { IconProps } from "./types";
 
 const LogoLight: React.FC<IconProps> = ({ width }) => {
-
-
   return (
     <svg
       width={width || "30"}
@@ -55,7 +53,7 @@ const LogoLight: React.FC<IconProps> = ({ width }) => {
         fill="#C8BA9C"
       />
     </svg>
-  ) 
+  );
 };
 
 export default LogoLight;
