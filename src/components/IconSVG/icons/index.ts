@@ -13,4 +13,5 @@ export { default as Polygon } from "./Polygon";
 export { default as BSC } from "./BSC";
 export { default as Logo } from "./Logo";
 export { default as Hamburger } from "./Hamburger";
+export { default as Globe } from "./Globe";
 export { default as Search } from "./Search";

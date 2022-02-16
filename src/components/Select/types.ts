@@ -1,4 +1,5 @@
 import React from "react";
+import colorValues from "../../theme/Apeswap/types";
 
 export enum positions {
   TOP = "top",
@@ -36,6 +37,7 @@ export interface SelectProps {
   active?: number;
   size?: sizeProps;
   position?: positionProps;
+  background?: colorValues;
 }
 
 export interface SelectItemProps {
@@ -44,4 +46,8 @@ export interface SelectItemProps {
   active?: boolean;
   size?: sizeProps;
   value: number;
+  px?: string;
+  py?: string;
+  minHeight?: string;
+  background?: colorValues;
 }

@@ -16,6 +16,7 @@ export enum icons {
   BSC = "bsc",
   LOGO = "logo",
   HAMBURGER = "hamburger",
+  GLOBE = "globe",
   SEARCH = "search",
 }
 

@@ -5,15 +5,22 @@ import { AnimatePresence, motion } from "framer-motion";
 import { SelectProps, selectPadding, sizes, positions } from "./types";
 import { IconSVG } from "../IconSVG";
 import styles from "./styles";
+import colorValues from "../../theme/Apeswap/types";
 
-const Select: React.FC<SelectProps> = ({ children, active, size = sizes.MEDIUM, position = positions.BOTTOM }) => {
+const Select: React.FC<SelectProps> = ({
+  children,
+  active,
+  size = sizes.MEDIUM,
+  background = colorValues.lvl1,
+  position = positions.BOTTOM,
+}) => {
   const [open, setOpen] = useState(false);
 
   const handleClick = () => setOpen((prev) => !prev);
 
   return (
     <>
-      <Box sx={styles.container} onClick={handleClick}>
+      <Box sx={{ background, ...styles.container }} onClick={handleClick}>
         <Flex
           sx={{
             pr: selectPadding[size],

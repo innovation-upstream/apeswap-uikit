@@ -1,7 +1,7 @@
 import { ThemeUIStyleObject } from "theme-ui";
 
 const defaultStyle = {
-  padding: "10px",
+  // padding: "10px",
   border: "none",
 };
 
@@ -21,7 +21,9 @@ const styles: Record<string, ThemeUIStyleObject> = {
     },
   },
   circular: {
-    padding: "1px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
   flex: {
     display: "inline-flex",

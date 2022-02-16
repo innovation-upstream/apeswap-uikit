@@ -3,7 +3,6 @@ import { fontSizes } from "./types";
 
 const styles: Record<string, ThemeUIStyleObject> = {
   container: {
-    background: "lvl1",
     borderRadius: "10px",
     cursor: "pointer",
     width: "fit-content",

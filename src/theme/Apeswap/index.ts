@@ -243,8 +243,9 @@ const Apeswap: Theme = {
       },
     },
     circular: {
-      width: "40px",
-      height: "40px",
+      width: "auto",
+      height: "auto",
+      padding: "1px",
       background: "white3",
       borderRadius: "50%",
       display: "flex",
