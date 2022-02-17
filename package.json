@@ -1,6 +1,6 @@
 {
   "name": "@isioma/uikit",
-  "version": "0.10.5-3.8",
+  "version": "0.10.5-3.9",
   "description": "Set of UI components for apeswap projects",
   "main": "dist/index.cjs.js",
   "resolutions": {
@@ -88,7 +88,7 @@
     "lodash": "^4.17.20",
     "react-transition-group": "^4.4.1",
     "styled-system": "^5.1.5",
-    "yalc": "^1.0.0-pre.53",
-    "theme-ui": "^0.13.1"
+    "theme-ui": "^0.13.1",
+    "yalc": "^1.0.0-pre.53"
   }
 }
