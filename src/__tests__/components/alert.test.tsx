@@ -27,10 +27,10 @@ it("renders correctly", () => {
           </svg>
         </div>
         <div
-          class="css-1hcb0ry-Alert css-4cffwv"
+          class="css-37jgg9-Alert"
         >
           <p
-            class="css-v1hy58-Alert css-18xsidq"
+            class="css-13bu3r8-Alert"
           >
             Alert title
           </p>

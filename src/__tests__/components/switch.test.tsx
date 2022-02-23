@@ -7,10 +7,10 @@ it("renders correctly", () => {
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
       <div
-        class="css-l4yzaa-Switch css-vurnku"
+        class="css-1nkptyu-Switch"
       >
         <div
-          class="css-1aawmn0-Switch css-vurnku"
+          class="css-o2yhdh-Switch"
         >
           <span
             class="css-1w070cj"
@@ -19,7 +19,7 @@ it("renders correctly", () => {
           </span>
         </div>
         <div
-          class="css-1aawmn0-Switch css-vurnku"
+          class="css-o2yhdh-Switch"
         >
           <span
             class="css-1w070cj"
