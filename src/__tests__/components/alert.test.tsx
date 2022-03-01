@@ -27,7 +27,7 @@ it("renders correctly", () => {
           </svg>
         </div>
         <div
-          class="css-37jgg9-Alert"
+          class="css-1fphqk9-Alert"
         >
           <p
             class="css-13bu3r8-Alert"
@@ -42,7 +42,7 @@ it("renders correctly", () => {
             class="css-1qz86be"
           >
             <svg
-              class="css-9n3j4l-Close"
+              class="css-1qlsele-Close"
               fill="none"
               viewBox="0 0 12 12"
               width="12"

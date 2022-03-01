@@ -17,7 +17,7 @@ it("renders correctly", () => {
           class="css-31qxmc-Dropdown"
         >
           <svg
-            class="css-1qfiwdz-Caret"
+            class="css-13rgkqj-Caret"
             fill="none"
             viewBox="0 0 10 8"
             width="10"

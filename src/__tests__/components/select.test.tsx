@@ -14,10 +14,10 @@ it("renders correctly", () => {
         class="css-3yhati-Select"
       >
         <div
-          class="css-tte42-Select"
+          class="css-yh5062-Select"
         >
           <svg
-            class="css-1qfiwdz-Caret"
+            class="css-13rgkqj-Caret"
             fill="none"
             viewBox="0 0 10 8"
             width="10"

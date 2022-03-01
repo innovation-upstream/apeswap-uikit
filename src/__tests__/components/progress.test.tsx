@@ -7,11 +7,8 @@ it("renders correctly", () => {
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
       <div
-        class="css-41n0hu-Progress"
+        class="css-12ans34-Progress"
       >
-        <div
-          class="css-1m2my81-Progress"
-        />
         <div
           class="css-1te2w3q-Progress"
         />
