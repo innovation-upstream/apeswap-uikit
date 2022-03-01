@@ -7,25 +7,8 @@ import MenuContext from "./MenuContext";
 import styles from "./styles";
 import { MenuLinkProps } from "./types";
 
-const DropdownLink: React.FC<MenuLinkProps> = ({ item }) => {
-  const { label, icon, path } = item;
-
-  return (
-    <NavLink href={path} sx={styles.link}>
-      <Flex sx={{ alignItems: "center" }}>
-        <Flex sx={{ flexShrink: 0 }}>
-          <Icon width={24} icon={icon} />
-        </Flex>
-        <Flex sx={{ flexShrink: 0, marginLeft: "10px" }}>
-          <Text sx={styles.textStyles}>{label}</Text>
-        </Flex>
-      </Flex>
-    </NavLink>
-  );
-};
-
-const MenuLink: React.FC<MenuLinkProps> = ({ item }) => {
-  const { label, icon, path, subMenu } = item;
+const MenuLink: React.FC<MenuLinkProps> = ({ item, children, component = NavLink, componentProps = {} }) => {
+  const { label, icon } = item;
   const { active, collapse, setCollapse } = useContext(MenuContext);
 
   const isActive = item.path === active;
@@ -36,6 +19,8 @@ const MenuLink: React.FC<MenuLinkProps> = ({ item }) => {
     return setOpen((prev) => !prev);
   };
 
+  const Element = component;
+
   return (
     <Box>
       <Flex
@@ -44,7 +29,7 @@ const MenuLink: React.FC<MenuLinkProps> = ({ item }) => {
           boxShadow: isActive ? "rgb(175, 110, 90) 4px 0px 0px inset" : "",
         }}
       >
-        <NavLink href={path} sx={styles.link} onClick={handleClick}>
+        <Element {...componentProps} sx={styles.link} onClick={handleClick}>
           <Flex sx={{ alignItems: "center" }}>
             <Flex sx={{ flexShrink: 0 }}>
               <Icon width={24} icon={icon} />
@@ -54,16 +39,16 @@ const MenuLink: React.FC<MenuLinkProps> = ({ item }) => {
             </Flex>
           </Flex>
 
-          {subMenu && (
+          {children && (
             <Box sx={{ display: collapse ? "none" : null }}>
               <Icon icon="caret" direction={open ? "up" : "down"} />
             </Box>
           )}
-        </NavLink>
+        </Element>
       </Flex>
 
       <AnimatePresence>
-        {subMenu && open && (
+        {children && open && (
           <motion.div
             initial={{ height: 0 }}
             animate={{ height: "fit-content" }}
@@ -71,19 +56,7 @@ const MenuLink: React.FC<MenuLinkProps> = ({ item }) => {
             exit={{ height: 0 }}
             sx={{ overflow: "hidden" }}
           >
-            {subMenu.map((child, i) => {
-              return (
-                <Flex
-                  sx={{
-                    ...styles.menuLinkContainer,
-                    boxShadow: child.path === active ? "rgb(175, 110, 90) 4px 0px 0px inset" : "",
-                  }}
-                  key={`${item}-${i + 1}`}
-                >
-                  <DropdownLink item={child} />
-                </Flex>
-              );
-            })}
+            {children}
           </motion.div>
         )}
       </AnimatePresence>

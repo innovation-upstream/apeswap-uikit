@@ -2,13 +2,12 @@ import { ThemeUIStyleObject } from "theme-ui";
 
 const styles: Record<string, ThemeUIStyleObject> = {
   container: {
-    display: "grid",
+    display: "flex",
     borderRadius: "10px",
     background: "white3",
     width: "fit-content",
     position: "relative",
     justifyItems: "center",
-    gridTemplateColumns: "repeat(2, 1fr)",
   },
   switch: {
     borderRadius: "10px",
@@ -26,7 +25,6 @@ const styles: Record<string, ThemeUIStyleObject> = {
     border: 0,
     top: 0,
     height: "100%",
-    width: "50%",
     fontSize: "14px",
     transition: "left 0.2s linear",
     "&:hover": {

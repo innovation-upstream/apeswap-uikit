@@ -1,29 +1,26 @@
 import React from "react";
-import { Button } from "../Button";
+import { Box } from "theme-ui";
+import { Text } from "../Text";
 import { sizes, TabProps, variants } from "./types";
+import styles from "./styles";
 
-const Tab: React.FC<TabProps> = ({
-  activeTab,
-  onClick,
-  index,
-  label,
-  size = sizes.MEDIUM,
-  variant = variants.CENTERED,
-}) => {
-  return (
-    <Button
-      size={size}
-      sx={{
-        border: 0,
-        background: activeTab === index ? undefined : "white3",
-        color: activeTab === index ? undefined : "primaryButtonDisable",
-        flex: variant === variants.FULLWIDTH ? 1 : undefined,
-      }}
-      onClick={() => onClick(index)}
-    >
-      {label}
-    </Button>
-  );
-};
+const Tab: React.FC<TabProps> = React.forwardRef(
+  ({ onClick, index, label, size = sizes.MEDIUM, variant = variants.CENTERED }, ref) => {
+    return (
+      <Box
+        ref={ref as any}
+        sx={{
+          ...styles.tab,
+          flex: variant === variants.FULLWIDTH ? 1 : undefined,
+        }}
+        onClick={() => onClick(index)}
+      >
+        <Text variant="sm" weight="bold">
+          {label}
+        </Text>
+      </Box>
+    );
+  }
+);
 
 export default Tab;

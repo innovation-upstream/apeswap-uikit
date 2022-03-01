@@ -8,6 +8,8 @@ import styles from "./styles";
 
 const Toggle: React.FC<ToggleProps> = ({ checked, labels, ...props }) => {
   const inputRef = useRef<HTMLInputElement>(null);
+  const leftRef = useRef<any>(null);
+  const rightRef = useRef<any>(null);
   const [isChecked, setIsChecked] = useState(checked);
 
   useEffect(() => {
@@ -22,6 +24,7 @@ const Toggle: React.FC<ToggleProps> = ({ checked, labels, ...props }) => {
   return (
     <Box sx={styles.container}>
       <Box
+        ref={leftRef}
         sx={{
           ...styles.switch,
           background: "white3",
@@ -35,6 +38,7 @@ const Toggle: React.FC<ToggleProps> = ({ checked, labels, ...props }) => {
       </Box>
 
       <Box
+        ref={rightRef}
         sx={{
           ...styles.switch,
           background: "white3",
@@ -49,7 +53,12 @@ const Toggle: React.FC<ToggleProps> = ({ checked, labels, ...props }) => {
       <Button
         csx={{
           ...styles.button,
-          left: isChecked ? "50%" : 0,
+          width: (isChecked ? rightRef : leftRef)?.current?.getBoundingClientRect?.()?.width || "fit-content",
+          left:
+            isChecked && rightRef?.current
+              ? rightRef?.current?.getBoundingClientRect?.()?.x -
+                rightRef?.current?.parentNode.getBoundingClientRect?.()?.x
+              : 0,
         }}
       >
         {isChecked ? labels[1] : labels[0]}

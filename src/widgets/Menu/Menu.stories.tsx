@@ -1,9 +1,11 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /** @jsxImportSource theme-ui */
 import React from "react";
+import { NavLink } from "theme-ui";
 import StorybookLayout from "../../components/StorybookLayout/StorybookLayout";
 import { Text } from "../../components/Text";
 import MenuLink from "./MenuLink";
+import MenuSubLink from "./MenuSubLink";
 import MenuContainer from "./Menu";
 import MenuBody from "./MenuBody";
 import MenuFooter from "./MenuFooter";
@@ -23,7 +25,7 @@ export default {
   },
 };
 
-const sideMenu: MenuItem[] = [
+const sideMenu = [
   {
     label: "Home",
     icon: icons.HOME,
@@ -112,7 +114,16 @@ export const Default = (args: any) => {
         <MenuContainer {...args}>
           <MenuBody>
             {sideMenu.map((item, index) => (
-              <MenuLink item={item} key={`${item}-${index + 1}`} />
+              <MenuLink
+                item={item}
+                key={`${item}-${index + 1}`}
+                component={NavLink}
+                componentProps={{ href: item.path }}
+              >
+                {item.subMenu?.map((link) => (
+                  <MenuSubLink item={link} component={NavLink} componentProps={{ href: link.path }} />
+                ))}
+              </MenuLink>
             ))}
           </MenuBody>
 

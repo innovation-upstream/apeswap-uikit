@@ -22,12 +22,11 @@ export interface TabProps {
 }
 
 export interface TabsProps {
-  children?: any;
+  activeTab: number;
   variant?: variantProps;
 }
 
 export interface TabPanelProps {
-  children?: any;
   index: number;
   activeTab: number;
 }

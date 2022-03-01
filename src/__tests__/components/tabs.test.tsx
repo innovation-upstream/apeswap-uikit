@@ -10,11 +10,15 @@ it("renders correctly", () => {
   );
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
-      <button
-        class="css-184c8io"
+      <div
+        class="css-1kebhut"
       >
-        Tab
-      </button>
+        <span
+          class="css-1w070cj"
+        >
+          Tab
+        </span>
+      </div>
     </DocumentFragment>
   `);
 });

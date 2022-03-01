@@ -9,7 +9,7 @@ it("renders correctly", () => {
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
       <div
-        class="css-4vqztx-Toggle"
+        class="css-11mhibg-Toggle"
       >
         <div
           class="css-l2o5q3-Toggle"
@@ -30,7 +30,7 @@ it("renders correctly", () => {
           </span>
         </div>
         <button
-          class="css-5oplf8"
+          class="css-k8iz3v"
         >
           Switch2
         </button>
