@@ -13,7 +13,7 @@ const Progress: React.FC<ProgressProps> = ({
   to = 50,
   color = "gradient",
   background = "white4",
-  width = "100%"
+  width = "100%",
 }) => {
   const [toValue, setTo] = useState(0);
 

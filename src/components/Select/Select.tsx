@@ -38,7 +38,7 @@ const Select: React.FC<SelectProps> = ({
             alignItems: "center",
             justifyContent: "space-between",
             width: "100%",
-            overflow: "hidden"
+            overflow: "hidden",
           }}
         >
           {React.Children.map(children, (child) => {

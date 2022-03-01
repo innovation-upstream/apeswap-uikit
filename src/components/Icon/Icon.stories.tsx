@@ -39,16 +39,20 @@ export const AllIcons: React.FC = ({ ...args }: any) => {
   return (
     <StorybookLayout {...args}>
       <TableBody borderRadius={10}>
-        {Object.values(icons).sort().map((icon) => {
-          return (
-            <TableRow key={icon} textAlign="left">
-              <TableCell>
-                <Icon color="text" width={icon === "textLogo" ? undefined : "25px"} icon={icon} />
-              </TableCell>
-              <TableCell><Text>{icon}</Text></TableCell>
-            </TableRow>
-          );
-        })}
+        {Object.values(icons)
+          .sort()
+          .map((icon) => {
+            return (
+              <TableRow key={icon} textAlign="left">
+                <TableCell>
+                  <Icon color="text" width={icon === "textLogo" ? undefined : "25px"} icon={icon} />
+                </TableCell>
+                <TableCell>
+                  <Text>{icon}</Text>
+                </TableCell>
+              </TableRow>
+            );
+          })}
       </TableBody>
     </StorybookLayout>
   );
