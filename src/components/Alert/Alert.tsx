@@ -28,14 +28,14 @@ const Alert: React.FC<AlertProps> = ({ variant = variants.ERROR, text, linkText,
         </Text>
 
         {linkText && url && (
-          <LinkExternal href={url} sx={{ ...styles.link }} color="brown">
+          <LinkExternal href={url} sx={{ ...styles.link }} color="text">
             {linkText}
           </LinkExternal>
         )}
       </Flex>
 
       <Box>
-        <IconButton icon="close" variant="transparent" color="brown" onClick={onClose} />
+        <IconButton icon="close" variant="transparent" color="text" onClick={onClose} />
       </Box>
     </motion.div>
   );

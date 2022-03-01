@@ -2,7 +2,7 @@
 import React from "react";
 import { IconProps, rotation } from "./types";
 
-const Farm: React.FC<IconProps> = ({ direction = "right", color = "brown", width, getStyles }) => {
+const Farm: React.FC<IconProps> = ({ direction = "right", color = "text", width, getStyles }) => {
   const deg: rotation = {
     left: 180,
     up: 270,

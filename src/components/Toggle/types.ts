@@ -1,7 +1,6 @@
 import { InputHTMLAttributes } from "react";
 
-export type ToggleTheme = {
-  handleBackground: string;
-};
-
-export type ToggleProps = InputHTMLAttributes<HTMLInputElement>;
+export interface ToggleProps extends InputHTMLAttributes<HTMLInputElement> {
+  checked: boolean;
+  labels: [string, string];
+}

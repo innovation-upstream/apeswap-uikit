@@ -1,6 +1,5 @@
 // Components
 export * from "./components/Alert";
-export * from "./components/Breadcrumbs";
 export * from "./components/Button";
 export * from "./components/ButtonSquare";
 export * from "./components/ButtonMenu";
@@ -11,7 +10,6 @@ export * from "./components/Flex";
 export * from "./components/Heading";
 export * from "./components/Image";
 export * from "./components/Input";
-export * from "./components/Layouts";
 export * from "./components/Radio";
 export * from "./components/Svg";
 export * from "./components/Tag";
@@ -25,7 +23,6 @@ export * from "./components/Table";
 export * from "./components/Textarea";
 export * from "./components/Carousel";
 export * from "./components/TooltipBubble";
-export * from "./components/List";
 export * from "./components/Select";
 export * from "./components/Icon";
 

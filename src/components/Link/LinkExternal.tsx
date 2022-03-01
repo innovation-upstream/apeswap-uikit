@@ -8,7 +8,7 @@ const LinkExternal: React.FC<LinkExternalProps> = ({ display, textAlign, childre
   return (
     <Link
       sx={{
-        color: "brown",
+        color: "text",
         display,
         textAlign,
       }}
@@ -17,7 +17,7 @@ const LinkExternal: React.FC<LinkExternalProps> = ({ display, textAlign, childre
     >
       {children}
       <Box as="span" sx={{ marginLeft: 2, verticalAlign: "middle" }}>
-        <Icon icon="external" color="brown" />
+        <Icon icon="external" color="text" />
       </Box>
     </Link>
   );

@@ -25,5 +25,6 @@ export const Default = (args: any) => {
 
 Default.args = {
   height: "15px",
+  width: "300px",
   to: 70,
 };

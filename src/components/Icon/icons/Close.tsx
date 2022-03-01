@@ -2,7 +2,7 @@
 import React from "react";
 import { IconProps } from "./types";
 
-const Close: React.FC<IconProps> = ({ width, color = "brown", getStyles }) => {
+const Close: React.FC<IconProps> = ({ width, color = "text", getStyles }) => {
   const style = getStyles({
     color,
   });

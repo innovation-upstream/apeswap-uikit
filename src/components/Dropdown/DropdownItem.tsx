@@ -26,7 +26,7 @@ const DropdownItem: React.FC<DropdownItemProps> = ({ onClick, url, active, size 
         py: dropdownItemPadding[size].y,
         listStyleType: active ? "disc" : "none",
         cursor: "pointer",
-        color: "brown",
+        color: "text",
         borderRadius: "10px",
         "&:hover": {
           backgroundColor: "lvl2",

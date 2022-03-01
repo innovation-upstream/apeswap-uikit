@@ -20,7 +20,7 @@ const Modal: React.FC<ModalProps> = ({
           <motion.div
             initial={{ opacity: 0, transform: "translate(-50%, -50%) scale(0.1)" }}
             animate={{ opacity: 1, transform: "translate(-50%, -50%) scale(1.0)" }}
-            transition={{ opacity: { duration: 0.5 }, transform: { duration: 0.5 } }}
+            transition={{ opacity: { duration: 0.2 }, transform: { duration: 0.2 } }}
             exit={{ opacity: 0, transform: "translate(-50%, -50%) scale(0)" }}
             {...props}
             sx={{ minWidth, maxWidth, ...style.container }}

@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import React from "react";
-import Switch from "./Switch";
+import Toggle from "./Toggle";
 import StorybookLayout from "../StorybookLayout/StorybookLayout";
 
 export default {
-  title: "Components/Switch",
-  component: Switch,
+  title: "Components/Toggle",
+  component: Toggle,
   argTypes: {
     colorMode: {
       options: ["light", "dark"],
@@ -16,7 +16,7 @@ export default {
 
 export const Default = (args: any) => (
   <StorybookLayout {...args}>
-    <Switch {...args} labels={["Switch1", "Switch2"]} onChange={() => {}} />
+    <Toggle {...args} labels={["Switch1", "Switch2"]} onChange={() => {}} />
   </StorybookLayout>
 );
 

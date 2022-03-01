@@ -8,7 +8,13 @@ export const anim = keyframes({
   to: { width: "100%" },
 });
 
-const Progress: React.FC<ProgressProps> = ({ height = "15px", to = 50, color = "gradient", background = "white4" }) => {
+const Progress: React.FC<ProgressProps> = ({
+  height = "15px",
+  to = 50,
+  color = "gradient",
+  background = "white4",
+  width = "100%"
+}) => {
   const [toValue, setTo] = useState(0);
 
   useEffect(() => {
@@ -18,21 +24,14 @@ const Progress: React.FC<ProgressProps> = ({ height = "15px", to = 50, color = "
   return (
     <div
       sx={{
-        width: "100%",
+        height,
+        width,
+        background,
         border: 0,
+        borderRadius: "normal",
         position: "relative",
       }}
     >
-      <div
-        sx={{
-          width: "100%",
-          height,
-          background,
-          border: 0,
-          borderRadius: "normal",
-          animation: `${anim} 2s cubic-bezier(0.1, -0.6, 0.2, 0)`,
-        }}
-      />
       <div
         sx={{
           height,

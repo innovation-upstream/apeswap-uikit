@@ -18,6 +18,7 @@ enum colorValues {
   text = "text",
   textDisabled = "textDisabled",
   textareaColor = "textareaColor",
+  heading = "heading",
   black = "black",
   gradient = "gradient",
   white1 = "white1",

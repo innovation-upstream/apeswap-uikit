@@ -19,7 +19,7 @@ export default {
 };
 
 export const Default = (args) => {
-  const Title = () => <Text sx={{ color: "brown" }}>Dropdown</Text>;
+  const Title = () => <Text sx={{ color: "text" }}>Dropdown</Text>;
 
   return (
     <StorybookLayout {...args}>

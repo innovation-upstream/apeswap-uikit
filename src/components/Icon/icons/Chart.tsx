@@ -2,7 +2,7 @@
 import React from "react";
 import { IconProps, rotation } from "./types";
 
-const Chart: React.FC<IconProps> = ({ direction = "down", color = "brown", width, getStyles }) => {
+const Chart: React.FC<IconProps> = ({ direction = "down", color = "text", width, getStyles }) => {
   const deg: rotation = {
     left: 90,
     up: 180,

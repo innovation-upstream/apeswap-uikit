@@ -9,6 +9,7 @@ import styles from "./styles";
 const Select: React.FC<SelectProps> = ({
   children,
   active,
+  width = "fit-content",
   size = sizes.MEDIUM,
   position = positions.BOTTOM,
   ...props
@@ -29,12 +30,15 @@ const Select: React.FC<SelectProps> = ({
 
   return (
     <>
-      <Box sx={styles.container} onClick={handleClick}>
+      <Box sx={{ ...styles.container, width }} onClick={handleClick}>
         <Flex
           sx={{
             pr: selectPadding[size],
             columnGap: "10px",
             alignItems: "center",
+            justifyContent: "space-between",
+            width: "100%",
+            overflow: "hidden"
           }}
         >
           {React.Children.map(children, (child) => {

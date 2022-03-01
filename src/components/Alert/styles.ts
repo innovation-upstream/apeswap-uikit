@@ -17,7 +17,7 @@ const styles: Record<string, ThemeUIStyleObject> = {
   content: {
     flexDirection: "column",
     flex: 1,
-    color: "brown",
+    color: "text",
     rowGap: "10px",
     ml: "10px",
   },

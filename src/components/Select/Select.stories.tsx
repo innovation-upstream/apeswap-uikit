@@ -41,4 +41,5 @@ export const Default = (args) => {
 Default.args = {
   colorMode: "light",
   size: "md",
+  width: "fit-content"
 };

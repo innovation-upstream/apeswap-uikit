@@ -35,6 +35,7 @@ type positionProps = `${positions}`;
 export interface SelectProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "size"> {
   active?: number | string;
   size?: sizeProps;
+  width?: string | number;
   position?: positionProps;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }

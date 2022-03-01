@@ -5,7 +5,7 @@ const styles: Record<string, ThemeUIStyleObject> = {
     padding: 9,
     background: "navbar",
     borderRadius: "normal",
-    color: "brown",
+    color: "text",
     hr: {
       background: "#DCD9D9",
     },
@@ -32,7 +32,7 @@ const styles: Record<string, ThemeUIStyleObject> = {
     justifyContent: "space-between",
     alignItems: "center",
     svg: {
-      fill: "brown",
+      fill: "text",
       marginLeft: "auto",
       cursor: "pointer",
     },
@@ -50,7 +50,7 @@ const styles: Record<string, ThemeUIStyleObject> = {
   cancelButton: {
     background: "transparent",
     textDecoration: "underline",
-    color: "brown",
+    color: "text",
     cursor: "pointer",
     fontSize: 0,
     fontWeight: "normal",
