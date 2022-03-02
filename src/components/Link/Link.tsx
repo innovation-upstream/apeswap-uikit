@@ -20,7 +20,11 @@ const Link: React.FC<LinkProps> = ({ external, children, ...props }) => {
   if (external) {
     return <LinkExternal>{children}</LinkExternal>;
   }
-  return <StyledLink as="a" bold {...internalProps} {...props} />;
+  return (
+    <StyledLink as="a" bold {...internalProps} {...props}>
+      {children}
+    </StyledLink>
+  );
 };
 
 Link.defaultProps = {
