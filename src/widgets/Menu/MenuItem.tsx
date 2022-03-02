@@ -1,21 +1,31 @@
 /** @jsxImportSource theme-ui */
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useContext, useState } from "react";
-import { Box, Flex, NavLink, Text } from "theme-ui";
+import { Box, Flex, Text } from "theme-ui";
 import { Icon } from "../../components/Icon";
 import MenuContext from "./MenuContext";
 import styles from "./styles";
-import { MenuLinkProps } from "./types";
-import { iconTypes } from "../../components/Icon/types";
+import { MenuItemProps } from "./types";
 
-const MenuLink: React.FC<MenuLinkProps> = ({
-  label,
-  icon,
-  path,
-  children,
-  component = NavLink,
-  componentProps = {},
-}) => {
+const Container = ({ hasSubmenu, component, onClick, children, ...props }: any) => {
+  if (hasSubmenu) {
+    return (
+      <Box {...props} onClick={onClick}>
+        {children}
+      </Box>
+    );
+  }
+
+  return React.Children.map(component, (child) => {
+    return React.cloneElement(child as any, {
+      ...(child as any)?.props,
+      children,
+      ...props,
+    });
+  }) as any;
+};
+
+const MenuItem: React.FC<MenuItemProps> = ({ label, icon, path, children, hasSubmenu, isSubmenu }) => {
   const { active, collapse, setCollapse } = useContext(MenuContext);
 
   const isActive = path === active;
@@ -23,20 +33,37 @@ const MenuLink: React.FC<MenuLinkProps> = ({
 
   const handleClick = () => {
     setCollapse(false);
-    return setOpen((prev) => !prev);
+    setOpen((prev) => !prev);
   };
 
-  const Element = component;
+  if (isSubmenu) {
+    return (
+      <Flex
+        sx={{
+          ...styles.MenuItemContainer,
+          boxShadow: path === active ? "rgb(175, 110, 90) 4px 0px 0px inset" : "",
+        }}
+      >
+        <Container sx={styles.link} component={children} onClick={handleClick}>
+          <Flex sx={{ alignItems: "center" }}>
+            <Flex sx={{ flexShrink: 0, marginLeft: "10px" }}>
+              <Text sx={styles.textStyles}>{label}</Text>
+            </Flex>
+          </Flex>
+        </Container>
+      </Flex>
+    );
+  }
 
   return (
     <Box>
       <Flex
         sx={{
-          ...styles.menuLinkContainer,
+          ...styles.MenuItemContainer,
           boxShadow: isActive ? "rgb(175, 110, 90) 4px 0px 0px inset" : "",
         }}
       >
-        <Element {...componentProps} sx={styles.link} onClick={handleClick}>
+        <Container sx={styles.link} hasSubmenu={hasSubmenu} component={children} onClick={handleClick}>
           <Flex sx={{ alignItems: "center" }}>
             <Flex sx={{ flexShrink: 0 }}>
               {typeof icon === "string" ? <Icon width={24} icon={icon as any} /> : icon}
@@ -46,16 +73,16 @@ const MenuLink: React.FC<MenuLinkProps> = ({
             </Flex>
           </Flex>
 
-          {children && (
+          {hasSubmenu && (
             <Box sx={{ display: collapse ? "none" : null }}>
               <Icon icon="caret" direction={open ? "up" : "down"} />
             </Box>
           )}
-        </Element>
+        </Container>
       </Flex>
 
       <AnimatePresence>
-        {children && open && (
+        {hasSubmenu && children && open && (
           <motion.div
             initial={{ height: 0 }}
             animate={{ height: "fit-content" }}
@@ -71,4 +98,4 @@ const MenuLink: React.FC<MenuLinkProps> = ({
   );
 };
 
-export default MenuLink;
+export default MenuItem;

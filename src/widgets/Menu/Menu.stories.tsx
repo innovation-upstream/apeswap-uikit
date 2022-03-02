@@ -4,18 +4,14 @@ import React from "react";
 import { NavLink } from "theme-ui";
 import StorybookLayout from "../../components/StorybookLayout/StorybookLayout";
 import { Text } from "../../components/Text";
-import MenuLink from "./MenuLink";
-import MenuSubLink from "./MenuSubLink";
-import MenuContainer from "./Menu";
-import MenuBody from "./MenuBody";
-import MenuFooter from "./MenuFooter";
+import Menu from "./Menu";
 import MenuContext from "./MenuContext";
 import { icons } from "../../components/Icon/types";
 import { Icon } from "../../components/Icon";
 
 export default {
   title: "Widgets/Menu",
-  component: MenuContainer,
+  component: Menu,
   argTypes: {
     colorMode: {
       options: ["light", "dark"],
@@ -110,18 +106,24 @@ export const Default = (args: any) => {
           setCollapse: () => {},
         }}
       >
-        <MenuContainer {...args}>
-          <MenuBody>
+        <Menu {...args}>
+          <Menu.Body>
             {sideMenu.map(({ subMenu, ...item }, index) => (
-              <MenuLink {...item} key={`${item}-${index + 1}`} component={NavLink} componentProps={{ href: item.path }}>
-                {subMenu?.map((link) => (
-                  <MenuSubLink {...link} component={NavLink} componentProps={{ href: link.path }} />
-                ))}
-              </MenuLink>
+              <Menu.Item hasSubmenu={!!subMenu} {...item} key={`${item}-${index + 1}`}>
+                {!subMenu ? (
+                  <NavLink href={item.path} />
+                ) : (
+                  subMenu?.map((link) => (
+                    <Menu.Item isSubmenu {...link}>
+                      <NavLink href={link.path} />
+                    </Menu.Item>
+                  ))
+                )}
+              </Menu.Item>
             ))}
-          </MenuBody>
+          </Menu.Body>
 
-          <MenuFooter>
+          <Menu.Footer>
             <div sx={{ display: "flex", justifyContent: "space-between", ml: "19px", mr: "26px", mb: "70px" }}>
               <div sx={{ display: "flex", alignItems: "center", columnGap: "8px" }}>
                 <Icon icon="ellipse" />
@@ -132,8 +134,8 @@ export const Default = (args: any) => {
               <Icon icon="ellipse" />
               <Icon icon="ellipse" />
             </div>
-          </MenuFooter>
-        </MenuContainer>
+          </Menu.Footer>
+        </Menu>
       </MenuContext.Provider>
     </StorybookLayout>
   );

@@ -22,7 +22,7 @@ const styles: Record<string, ThemeUIStyleObject> = {
     width: "100%",
     marginBottom: "20px",
   },
-  menuLinkContainer: {
+  MenuItemContainer: {
     alignItems: "center",
     height: "48px",
     pl: "17px",

@@ -1,18 +1,12 @@
 import React from "react";
 import { iconTypes } from "../../components/Icon/types";
 
-export interface MenuItem {
-  label: string;
-  path?: string;
-  icon?: iconTypes;
-}
-
-export interface MenuLinkProps {
+export interface MenuItemProps {
   label: string;
   path?: string;
   icon?: iconTypes | React.ReactNode;
-  component?: React.FC;
-  componentProps?: Record<string, any>;
+  hasSubmenu?: boolean;
+  isSubmenu?: boolean;
 }
 
 export interface MenuContextProps {
