@@ -10,7 +10,9 @@ it("renders link correctly", () => {
         class="sc-bdfBQB kOrAbB"
         color="primary"
         href="https://apeswap.finance"
-      />
+      >
+        Link
+      </a>
     </DocumentFragment>
   `);
 });
