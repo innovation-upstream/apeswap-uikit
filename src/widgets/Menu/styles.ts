@@ -44,7 +44,7 @@ const styles: Record<string, ThemeUIStyleObject> = {
     fontWeight: "600",
   },
   text: {
-    color: "brown",
+    color: "text",
     paddingLeft: "10px",
     fontWeight: "400",
   },

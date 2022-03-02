@@ -127,7 +127,7 @@ export const Default = (args: any) => {
             <div sx={{ display: "flex", justifyContent: "space-between", ml: "19px", mr: "26px", mb: "70px" }}>
               <div sx={{ display: "flex", alignItems: "center", columnGap: "8px" }}>
                 <Icon icon="ellipse" />
-                <Text sx={{ color: "brown", fontSize: "14px" }} weight="bold">
+                <Text sx={{ color: "text", fontSize: "14px" }} weight="bold">
                   $3.747
                 </Text>
               </div>
