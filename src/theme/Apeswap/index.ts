@@ -130,7 +130,6 @@ const Apeswap: Theme = {
       height: "inherit",
       margin: "0px",
       cursor: "pointer",
-      transition: "border-color 0.2s ease-in-out",
       "& + svg": {
         display: "none",
         position: "absolute",
@@ -148,11 +147,16 @@ const Apeswap: Theme = {
           display: "block",
         },
       },
+      "&:focus:not(:checked)": {
+        outline: "none",
+        boxShadow: "none",
+      },
       "&:focus": {
         outline: "none",
         boxShadow: "0px 0px 0px 1px #FFB300, 0px 0px 0px 4px rgb(255, 179, 0, .4)",
       },
       "&:hover:not(:disabled):not(:checked)": {
+        borderColor: "yellow",
         boxShadow: "0px 0px 0px 1px #FFB300, 0px 0px 0px 4px rgb(255, 179, 0, .4)",
       },
     },
@@ -169,7 +173,6 @@ const Apeswap: Theme = {
       height: "inherit",
       margin: "0px",
       cursor: "pointer",
-      transition: "border-color 0.2s ease-in-out",
       "& + span": {
         display: "none",
         position: "absolute",
@@ -191,10 +194,10 @@ const Apeswap: Theme = {
       },
       "&:focus": {
         outline: "none",
-        boxShadow: "0px 0px 0px 1px #FFB300, 0px 0px 0px 4px rgb(255, 179, 0, .4)",
+        boxShadow: "0px 0px 0px 1px #FFB300, 0px 0px 0px 4px rgb(255, 179, 0, .2)",
       },
       "&:hover:not(:disabled):not(:checked)": {
-        boxShadow: "0px 0px 0px 1px #FFB300, 0px 0px 0px 4px rgb(255, 179, 0, .4)",
+        borderColor: "yellow",
       },
     },
     label: {

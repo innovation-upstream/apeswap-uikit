@@ -18,6 +18,8 @@ const Input: React.FC<InputProps> = ({ size = sizes.MD, icon, width, sx, ...prop
           pl: "15px",
           pr: icon ? "40px" : "15px",
           variant: `forms.input.${size}`,
+          color: "text",
+          outline: "none",
           ...sx,
         }}
       />

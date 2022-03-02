@@ -5,7 +5,7 @@ const defaultStyle = {
   border: "none",
   transition: "all .3s linear",
   "&:hover": {
-    filter: "brightness(85%)",
+    filter: "brightness(115%)",
   },
   "&:active": {
     transform: "scale(0.9)",
