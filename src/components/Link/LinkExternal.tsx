@@ -11,6 +11,7 @@ const LinkExternal: React.FC<LinkExternalProps> = ({ display, textAlign, childre
         color: "text",
         display,
         textAlign,
+        cursor: "pointer",
       }}
       {...props}
       target="_blank"

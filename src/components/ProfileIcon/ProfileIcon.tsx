@@ -1,14 +1,11 @@
 import React from "react";
-import { Box } from "theme-ui";
+import { Box, useColorMode } from "theme-ui";
 import { Icon } from "../Icon";
 import { icons } from "../Icon/types";
 import style from "./styles";
 
-export interface Props {
-  colorMode?: "light" | "dark";
-}
-
-const ProfileIcon: React.FC<Props> = ({ colorMode = "light" }) => {
+const ProfileIcon: React.FC = () => {
+  const [colorMode] = useColorMode();
   return (
     <Box sx={style.container}>
       <Icon icon={colorMode === "light" ? icons.PROFILELIGHT : icons.PROFILEDARK} />

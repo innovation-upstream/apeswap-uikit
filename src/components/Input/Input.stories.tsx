@@ -22,7 +22,17 @@ export const Default = (args: any) => (
   </StorybookLayout>
 );
 
+export const WithIcon = (args: any) => (
+  <StorybookLayout {...args}>
+    <Input {...args} />
+  </StorybookLayout>
+);
+
 Default.args = {
+  colorMode: "light",
+};
+
+WithIcon.args = {
   colorMode: "light",
   icon: "search",
 };

@@ -9,6 +9,7 @@ enum colorValues {
   primaryDark = "primaryDark",
   success = "success",
   error = "error",
+  info = "info",
   yellow = "yellow",
   brown = "brown",
   primaryButtonDisable = "primaryButtonDisable",

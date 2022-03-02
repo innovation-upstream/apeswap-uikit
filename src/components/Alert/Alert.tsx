@@ -19,7 +19,11 @@ const Alert: React.FC<AlertProps> = ({ variant = variants.ERROR, text, linkText,
       sx={styles.alert}
     >
       <Flex>
-        <Icon icon="error" color={variant} />
+        <Icon
+          icon={variant === "danger" ? "close" : variant}
+          color={variant === "error" || variant === "danger" ? "error" : `${variant}`}
+          width="30px"
+        />
       </Flex>
 
       <Flex sx={{ ...styles.content }}>
