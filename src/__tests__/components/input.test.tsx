@@ -12,7 +12,7 @@ it("renders correctly", () => {
         class="css-1u137ur"
       >
         <input
-          class="css-f4fjy6"
+          class="css-1spk4n4"
           type="text"
           value="input"
         />

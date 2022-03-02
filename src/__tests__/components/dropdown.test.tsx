@@ -11,13 +11,13 @@ it("renders correctly", () => {
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
       <div
-        class="css-h7n00h-Dropdown"
+        class="css-1bk7dx0-Dropdown"
       >
         <div
-          class="css-31qxmc-Dropdown"
+          class="css-15zwq76-Dropdown"
         >
           <svg
-            class="css-13rgkqj-Caret"
+            class="css-1exjd22-Caret"
             fill="none"
             viewBox="0 0 10 8"
             width="10"

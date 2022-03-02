@@ -9,28 +9,28 @@ it("renders correctly", () => {
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
       <div
-        class="css-11mhibg-Toggle"
+        class="css-5f219a-Toggle"
       >
         <div
-          class="css-l2o5q3-Toggle"
+          class="css-1ls0ubo-Toggle"
         >
           <span
-            class="css-1w070cj"
+            class="css-z5s3q8"
           >
             Switch1
           </span>
         </div>
         <div
-          class="css-l2o5q3-Toggle"
+          class="css-1ls0ubo-Toggle"
         >
           <span
-            class="css-1w070cj"
+            class="css-z5s3q8"
           >
             Switch2
           </span>
         </div>
         <button
-          class="css-k8iz3v"
+          class="css-k1c6lv"
         >
           Switch2
         </button>

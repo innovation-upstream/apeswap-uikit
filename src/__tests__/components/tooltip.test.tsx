@@ -13,7 +13,7 @@ it("renders correctly", () => {
           class="css-140ll04"
         >
           <div
-            class="css-k607vm"
+            class="css-1sv27hc"
           />
         </div>
         <span
