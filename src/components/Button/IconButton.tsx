@@ -9,17 +9,22 @@ import colorValues from "../../theme/Apeswap/types";
 const IconButton: React.FC<IconButtonProps> = ({
   icon = icons.SEND,
   color = colorValues.white1,
+  background = colorValues.yellow,
   variant = variants.PRIMARY,
+  children,
   ...props
 }) => {
   return (
     <Button
       {...props}
-      sx={
-        variant === variants.TRANSPARENT ? style.transparent : { variant: `buttons.${variant}`, ...style[`${variant}`] }
-      }
+      sx={{
+        variant: `buttons.${variant}`,
+        background,
+        ...(variant === variants.PRIMARY ? style.primary : {}),
+        ...(variant === variants.TRANSPARENT ? style.transparent : {}),
+      }}
     >
-      <Icon color={color} icon={icon} {...props} />
+      {children || <Icon color={color} icon={icon} {...props} />}
     </Button>
   );
 };

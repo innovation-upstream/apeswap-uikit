@@ -256,6 +256,14 @@ const Apeswap: Theme = {
       alignItems: "center",
       overflow: "hidden",
       cursor: "pointer",
+      padding: "1px",
+      transition: "all .3s linear",
+      "&:hover": {
+        filter: "brightness(85%)",
+      },
+      "&:active": {
+        transform: "scale(0.9)",
+      },
     },
   },
   cards: {

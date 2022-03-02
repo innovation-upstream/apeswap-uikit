@@ -10,7 +10,6 @@ import MenuContainer from "./Menu";
 import MenuBody from "./MenuBody";
 import MenuFooter from "./MenuFooter";
 import MenuContext from "./MenuContext";
-import { MenuItem } from "./types";
 import { icons } from "../../components/Icon/types";
 import { Icon } from "../../components/Icon";
 
@@ -92,7 +91,7 @@ const sideMenu = [
   },
   {
     label: "More",
-    icon: icons.MORE,
+    icon: <Icon width={24} icon="more" />,
     subMenu: [
       {
         label: "More",
@@ -113,15 +112,10 @@ export const Default = (args: any) => {
       >
         <MenuContainer {...args}>
           <MenuBody>
-            {sideMenu.map((item, index) => (
-              <MenuLink
-                item={item}
-                key={`${item}-${index + 1}`}
-                component={NavLink}
-                componentProps={{ href: item.path }}
-              >
-                {item.subMenu?.map((link) => (
-                  <MenuSubLink item={link} component={NavLink} componentProps={{ href: link.path }} />
+            {sideMenu.map(({ subMenu, ...item }, index) => (
+              <MenuLink {...item} key={`${item}-${index + 1}`} component={NavLink} componentProps={{ href: item.path }}>
+                {subMenu?.map((link) => (
+                  <MenuSubLink {...link} component={NavLink} componentProps={{ href: link.path }} />
                 ))}
               </MenuLink>
             ))}

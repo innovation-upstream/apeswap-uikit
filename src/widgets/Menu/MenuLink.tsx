@@ -6,12 +6,19 @@ import { Icon } from "../../components/Icon";
 import MenuContext from "./MenuContext";
 import styles from "./styles";
 import { MenuLinkProps } from "./types";
+import { iconTypes } from "../../components/Icon/types";
 
-const MenuLink: React.FC<MenuLinkProps> = ({ item, children, component = NavLink, componentProps = {} }) => {
-  const { label, icon } = item;
+const MenuLink: React.FC<MenuLinkProps> = ({
+  label,
+  icon,
+  path,
+  children,
+  component = NavLink,
+  componentProps = {},
+}) => {
   const { active, collapse, setCollapse } = useContext(MenuContext);
 
-  const isActive = item.path === active;
+  const isActive = path === active;
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
@@ -32,7 +39,7 @@ const MenuLink: React.FC<MenuLinkProps> = ({ item, children, component = NavLink
         <Element {...componentProps} sx={styles.link} onClick={handleClick}>
           <Flex sx={{ alignItems: "center" }}>
             <Flex sx={{ flexShrink: 0 }}>
-              <Icon width={24} icon={icon} />
+              {typeof icon === "string" ? <Icon width={24} icon={icon as any} /> : icon}
             </Flex>
             <Flex sx={{ flexShrink: 0, marginLeft: "10px" }}>
               <Text sx={styles.text}>{label}</Text>

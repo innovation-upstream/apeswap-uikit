@@ -7,9 +7,8 @@ import MenuContext from "./MenuContext";
 import styles from "./styles";
 import { MenuLinkProps } from "./types";
 
-const MenuSubLink: React.FC<MenuLinkProps> = ({ item, component = NavLink, componentProps = {} }) => {
+const MenuSubLink: React.FC<MenuLinkProps> = ({ label, icon, path, component = NavLink, componentProps = {} }) => {
   const { active } = useContext(MenuContext);
-  const { label, icon, path } = item;
 
   const Element = component;
 
@@ -22,9 +21,6 @@ const MenuSubLink: React.FC<MenuLinkProps> = ({ item, component = NavLink, compo
     >
       <Element {...componentProps} sx={styles.link}>
         <Flex sx={{ alignItems: "center" }}>
-          <Flex sx={{ flexShrink: 0 }}>
-            <Icon width={24} icon={icon} />
-          </Flex>
           <Flex sx={{ flexShrink: 0, marginLeft: "10px" }}>
             <Text sx={styles.textStyles}>{label}</Text>
           </Flex>

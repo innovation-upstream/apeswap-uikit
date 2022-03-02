@@ -8,7 +8,9 @@ export interface MenuItem {
 }
 
 export interface MenuLinkProps {
-  item: MenuItem;
+  label: string;
+  path?: string;
+  icon?: iconTypes | React.ReactNode;
   component?: React.FC;
   componentProps?: Record<string, any>;
 }

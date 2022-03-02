@@ -45,5 +45,6 @@ export interface ButtonProps extends ThemeUIButtonProps {
 export interface IconButtonProps extends Omit<ButtonProps, "variant"> {
   variant?: iconButtonVariantsProps;
   color?: colorProps;
+  background?: colorProps;
   icon?: iconTypes;
 }

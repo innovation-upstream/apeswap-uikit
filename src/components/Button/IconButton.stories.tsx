@@ -1,5 +1,6 @@
 import React from "react";
 import IconButton from "./IconButton";
+import { Icon } from "../Icon";
 import StorybookLayout from "../StorybookLayout/StorybookLayout";
 
 export default {
@@ -25,9 +26,23 @@ export const Default = (args: any) => (
   </StorybookLayout>
 );
 
+export const Custom = (args: any) => (
+  <StorybookLayout {...args}>
+    <IconButton {...args}>
+      <Icon color={"white" as any} icon="twitter" />
+    </IconButton>
+  </StorybookLayout>
+);
+
 Default.args = {
   colorMode: "light",
   variant: "primary",
   color: "white",
   icon: "twitter",
+};
+
+Custom.args = {
+  colorMode: "light",
+  variant: "primary",
+  color: "white",
 };
