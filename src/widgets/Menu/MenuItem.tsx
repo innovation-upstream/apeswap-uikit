@@ -19,7 +19,13 @@ const Container = ({ hasSubmenu, component, onClick, children, ...props }: any) 
   return React.Children.map(component, (child) => {
     return React.cloneElement(child as any, {
       ...(child as any)?.props,
-      children,
+      children: React.Children.map(children, (c) => {
+        return React.cloneElement(c as any, {
+          ...(c as any)?.props,
+          children: (child as any)?.props?.children,
+          ...props,
+        });
+      }) as any,
       ...props,
     });
   }) as any;
@@ -39,37 +45,41 @@ const MenuItem: React.FC<MenuItemProps> = ({ label, icon, path, children, hasSub
   if (isSubmenu) {
     return (
       <Flex
+        onClick={handleClick}
         sx={{
           ...styles.MenuItemContainer,
+          position: "relative",
           boxShadow: path === active ? "rgb(175, 110, 90) 4px 0px 0px inset" : "",
         }}
       >
-        <Container sx={styles.link} component={children} onClick={handleClick}>
+        <Flex sx={styles.link}>
           <Flex sx={{ alignItems: "center" }}>
-            <Flex sx={{ flexShrink: 0, marginLeft: "10px" }}>
-              <Text sx={styles.textStyles}>{label}</Text>
-            </Flex>
+            <Flex sx={{ flexShrink: 0, marginLeft: "10px" }}>{children}</Flex>
           </Flex>
-        </Container>
+        </Flex>
       </Flex>
     );
   }
 
   return (
-    <Box>
+    <Box
+      sx={{
+        position: "relative",
+      }}
+    >
       <Flex
         sx={{
           ...styles.MenuItemContainer,
           boxShadow: isActive ? "rgb(175, 110, 90) 4px 0px 0px inset" : "",
         }}
       >
-        <Container sx={styles.link} hasSubmenu={hasSubmenu} component={children} onClick={handleClick}>
+        <Flex sx={styles.link} onClick={handleClick}>
           <Flex sx={{ alignItems: "center" }}>
             <Flex sx={{ flexShrink: 0 }}>
               {typeof icon === "string" ? <Icon width={24} icon={icon as any} /> : icon}
             </Flex>
             <Flex sx={{ flexShrink: 0, marginLeft: "10px" }}>
-              <Text sx={styles.text}>{label}</Text>
+              {hasSubmenu ? <Text sx={styles.text}>{label}</Text> : children}
             </Flex>
           </Flex>
 
@@ -78,7 +88,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ label, icon, path, children, hasSub
               <Icon icon="caret" direction={open ? "up" : "down"} />
             </Box>
           )}
-        </Container>
+        </Flex>
       </Flex>
 
       <AnimatePresence>

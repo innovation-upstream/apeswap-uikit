@@ -4,7 +4,7 @@ import React from "react";
 import { NavLink } from "theme-ui";
 import StorybookLayout from "../../components/StorybookLayout/StorybookLayout";
 import { Text } from "../../components/Text";
-import Menu from "./Menu";
+import { Menu, MenuBody, MenuItem, MenuFooter } from ".";
 import MenuContext from "./MenuContext";
 import { icons } from "../../components/Icon/types";
 import { Icon } from "../../components/Icon";
@@ -97,6 +97,17 @@ const sideMenu = [
   },
 ];
 
+const linkStyle = {
+  "&::after": {
+    content: '""',
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+    left: 0,
+    top: 0,
+  },
+};
+
 export const Default = (args: any) => {
   return (
     <StorybookLayout {...args}>
@@ -107,23 +118,43 @@ export const Default = (args: any) => {
         }}
       >
         <Menu {...args}>
-          <Menu.Body>
+          <MenuBody>
             {sideMenu.map(({ subMenu, ...item }, index) => (
-              <Menu.Item hasSubmenu={!!subMenu} {...item} key={`${item}-${index + 1}`}>
+              <MenuItem hasSubmenu={!!subMenu} {...item} key={`${item}-${index + 1}`}>
                 {!subMenu ? (
-                  <NavLink href={item.path} />
+                  <NavLink href={item.path} sx={linkStyle as any}>
+                    <Text
+                      sx={{
+                        color: "text",
+                        paddingLeft: "10px",
+                        fontWeight: "400",
+                      }}
+                    >
+                      {item.label}
+                    </Text>
+                  </NavLink>
                 ) : (
                   subMenu?.map((link) => (
-                    <Menu.Item isSubmenu {...link}>
-                      <NavLink href={link.path} />
-                    </Menu.Item>
+                    <MenuItem isSubmenu {...link}>
+                      <NavLink href={link.path} sx={linkStyle as any}>
+                        <Text
+                          sx={{
+                            color: "text",
+                            paddingLeft: "10px",
+                            fontWeight: "400",
+                          }}
+                        >
+                          {link.label}
+                        </Text>
+                      </NavLink>
+                    </MenuItem>
                   ))
                 )}
-              </Menu.Item>
+              </MenuItem>
             ))}
-          </Menu.Body>
+          </MenuBody>
 
-          <Menu.Footer>
+          <MenuFooter>
             <div sx={{ display: "flex", justifyContent: "space-between", ml: "19px", mr: "26px", mb: "70px" }}>
               <div sx={{ display: "flex", alignItems: "center", columnGap: "8px" }}>
                 <Icon icon="ellipse" />
@@ -134,7 +165,7 @@ export const Default = (args: any) => {
               <Icon icon="ellipse" />
               <Icon icon="ellipse" />
             </div>
-          </Menu.Footer>
+          </MenuFooter>
         </Menu>
       </MenuContext.Provider>
     </StorybookLayout>
