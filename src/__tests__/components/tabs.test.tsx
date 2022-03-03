@@ -11,10 +11,10 @@ it("renders correctly", () => {
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
       <div
-        class="css-1b0sfhr"
+        class="css-1aoopwd"
       >
         <span
-          class="css-z5s3q8"
+          class="css-xogzuj"
         >
           Tab
         </span>

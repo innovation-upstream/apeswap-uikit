@@ -12,19 +12,19 @@ it("renders correctly", () => {
         class="css-5f219a-Toggle"
       >
         <div
-          class="css-1ls0ubo-Toggle"
+          class="css-1008gcf-Toggle"
         >
           <span
-            class="css-z5s3q8"
+            class="css-vnj78y-Toggle"
           >
             Switch1
           </span>
         </div>
         <div
-          class="css-1ls0ubo-Toggle"
+          class="css-1d9f84a-Toggle"
         >
           <span
-            class="css-z5s3q8"
+            class="css-vnj78y-Toggle"
           >
             Switch2
           </span>

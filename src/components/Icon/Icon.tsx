@@ -34,6 +34,10 @@ import {
   Success,
   Settings,
   Chart,
+  Discord,
+  Reddit,
+  Medium,
+  Instagram,
 } from "./icons";
 import { BSC, BANANA, BNB, ETH, GNANA, POLYGON } from "./tokens";
 import { IconStyles } from "./icons/types";
@@ -155,6 +159,18 @@ const Icon: React.FC<IconProps> = ({ icon, ...props }) => {
   }
   if (icon === icons.BSC_TOKEN) {
     return <BSC {...props} getStyles={getStyles} />;
+  }
+  if (icon === icons.DISCORD) {
+    return <Discord {...props} getStyles={getStyles} />;
+  }
+  if (icon === icons.REDDIT) {
+    return <Reddit {...props} getStyles={getStyles} />;
+  }
+  if (icon === icons.MEDIUM) {
+    return <Medium {...props} getStyles={getStyles} />;
+  }
+  if (icon === icons.INSTAGRAM) {
+    return <Instagram {...props} getStyles={getStyles} />;
   }
   return null;
 };
