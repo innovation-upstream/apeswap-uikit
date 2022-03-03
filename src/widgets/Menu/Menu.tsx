@@ -1,16 +1,9 @@
 import React, { useContext } from "react";
 import { Flex } from "theme-ui";
 import MenuContext from "./MenuContext";
-import MenuBody from "./MenuBody";
-import MenuItem from "./MenuItem";
-import MenuFooter from "./MenuFooter";
 import styles from "./styles";
 
-const Menu: React.FC & {
-  Body: React.FC;
-  Item: React.FC<any>;
-  Footer: React.FC;
-} = ({ children }) => {
+const Menu: React.FC = ({ children }) => {
   const { collapse } = useContext(MenuContext);
 
   return (
@@ -24,9 +17,5 @@ const Menu: React.FC & {
     </Flex>
   );
 };
-
-Menu.Body = MenuBody;
-Menu.Item = MenuItem;
-Menu.Footer = MenuFooter;
 
 export default Menu;

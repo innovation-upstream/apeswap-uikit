@@ -4,7 +4,7 @@ import React from "react";
 import { NavLink } from "theme-ui";
 import StorybookLayout from "../../components/StorybookLayout/StorybookLayout";
 import { Text } from "../../components/Text";
-import Menu from "./Menu";
+import { Menu, MenuBody, MenuItem, MenuFooter } from ".";
 import MenuContext from "./MenuContext";
 import { icons } from "../../components/Icon/types";
 import { Icon } from "../../components/Icon";
@@ -107,23 +107,23 @@ export const Default = (args: any) => {
         }}
       >
         <Menu {...args}>
-          <Menu.Body>
+          <MenuBody>
             {sideMenu.map(({ subMenu, ...item }, index) => (
-              <Menu.Item hasSubmenu={!!subMenu} {...item} key={`${item}-${index + 1}`}>
+              <MenuItem hasSubmenu={!!subMenu} {...item} key={`${item}-${index + 1}`}>
                 {!subMenu ? (
                   <NavLink href={item.path} />
                 ) : (
                   subMenu?.map((link) => (
-                    <Menu.Item isSubmenu {...link}>
+                    <MenuItem isSubmenu {...link}>
                       <NavLink href={link.path} />
-                    </Menu.Item>
+                    </MenuItem>
                   ))
                 )}
-              </Menu.Item>
+              </MenuItem>
             ))}
-          </Menu.Body>
+          </MenuBody>
 
-          <Menu.Footer>
+          <MenuFooter>
             <div sx={{ display: "flex", justifyContent: "space-between", ml: "19px", mr: "26px", mb: "70px" }}>
               <div sx={{ display: "flex", alignItems: "center", columnGap: "8px" }}>
                 <Icon icon="ellipse" />
@@ -134,7 +134,7 @@ export const Default = (args: any) => {
               <Icon icon="ellipse" />
               <Icon icon="ellipse" />
             </div>
-          </Menu.Footer>
+          </MenuFooter>
         </Menu>
       </MenuContext.Provider>
     </StorybookLayout>
