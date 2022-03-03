@@ -41,6 +41,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ label, icon, path, children, hasSub
       <Flex
         sx={{
           ...styles.MenuItemContainer,
+          position: "relative",
           boxShadow: path === active ? "rgb(175, 110, 90) 4px 0px 0px inset" : "",
         }}
       >
@@ -56,7 +57,11 @@ const MenuItem: React.FC<MenuItemProps> = ({ label, icon, path, children, hasSub
   }
 
   return (
-    <Box>
+    <Box
+      sx={{
+        position: "relative",
+      }}
+    >
       <Flex
         sx={{
           ...styles.MenuItemContainer,
