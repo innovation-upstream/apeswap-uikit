@@ -59,6 +59,7 @@ const Toggle: React.FC<ToggleProps> = ({ checked, labels, sizing = sizes.MEDIUM,
           color: "primaryButtonDisable",
           px: togglePadding[sizing].x,
           py: togglePadding[sizing].y,
+          fontSize: fontSizes[sizing],
         }}
         onClick={handleClick}
       >
@@ -70,6 +71,9 @@ const Toggle: React.FC<ToggleProps> = ({ checked, labels, sizing = sizes.MEDIUM,
         csx={{
           ...styles.button,
           ...activeStyle,
+          fontSize: fontSizes[sizing],
+          px: togglePadding[sizing].x,
+          py: togglePadding[sizing].y,
         }}
       >
         {isChecked ? labels[1] : labels[0]}
