@@ -97,6 +97,17 @@ const sideMenu = [
   },
 ];
 
+const linkStyle = {
+  "&::after": {
+    content: '""',
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+    left: 0,
+    top: 0,
+  },
+};
+
 export const Default = (args: any) => {
   return (
     <StorybookLayout {...args}>
@@ -111,11 +122,31 @@ export const Default = (args: any) => {
             {sideMenu.map(({ subMenu, ...item }, index) => (
               <MenuItem hasSubmenu={!!subMenu} {...item} key={`${item}-${index + 1}`}>
                 {!subMenu ? (
-                  <NavLink href={item.path} />
+                  <NavLink href={item.path} sx={linkStyle as any}>
+                    <Text
+                      sx={{
+                        color: "text",
+                        paddingLeft: "10px",
+                        fontWeight: "400",
+                      }}
+                    >
+                      {item.label}
+                    </Text>
+                  </NavLink>
                 ) : (
                   subMenu?.map((link) => (
                     <MenuItem isSubmenu {...link}>
-                      <NavLink href={link.path} />
+                      <NavLink href={link.path} sx={linkStyle as any}>
+                        <Text
+                          sx={{
+                            color: "text",
+                            paddingLeft: "10px",
+                            fontWeight: "400",
+                          }}
+                        >
+                          {link.label}
+                        </Text>
+                      </NavLink>
                     </MenuItem>
                   ))
                 )}
