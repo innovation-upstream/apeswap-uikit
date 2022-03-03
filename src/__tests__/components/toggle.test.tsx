@@ -12,7 +12,7 @@ it("renders correctly", () => {
         class="css-5f219a-Toggle"
       >
         <div
-          class="css-1008gcf-Toggle"
+          class="css-hgu77l-Toggle"
         >
           <span
             class="css-vnj78y-Toggle"
@@ -21,7 +21,7 @@ it("renders correctly", () => {
           </span>
         </div>
         <div
-          class="css-1d9f84a-Toggle"
+          class="css-hgu77l-Toggle"
         >
           <span
             class="css-vnj78y-Toggle"
@@ -30,7 +30,7 @@ it("renders correctly", () => {
           </span>
         </div>
         <button
-          class="css-151yj77"
+          class="css-1n7flj"
         >
           Switch2
         </button>

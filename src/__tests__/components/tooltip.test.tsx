@@ -16,11 +16,11 @@ it("renders correctly", () => {
             class="css-1sv27hc"
           />
         </div>
-        <span
-          class="css-vurnku"
+        <div
+          class="css-r8xm40"
         >
           Tooltip
-        </span>
+        </div>
       </span>
     </DocumentFragment>
   `);
