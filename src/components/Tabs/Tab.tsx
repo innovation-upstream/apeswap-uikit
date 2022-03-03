@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "theme-ui";
 import { Text } from "../Text";
-import { sizes, TabProps, variants } from "./types";
+import { sizes, TabProps, variants, tabPadding, fontSizes } from "./types";
 import styles from "./styles";
 
 const Tab: React.FC<TabProps> = React.forwardRef(
@@ -12,10 +12,12 @@ const Tab: React.FC<TabProps> = React.forwardRef(
         sx={{
           ...styles.tab,
           flex: variant === variants.FULLWIDTH ? 1 : undefined,
+          px: tabPadding[size].x,
+          py: tabPadding[size].y,
         }}
         onClick={() => onClick(index)}
       >
-        <Text variant="sm" weight="bold">
+        <Text sx={{ fontSize: fontSizes[size] }} weight="bold">
           {label}
         </Text>
       </Box>

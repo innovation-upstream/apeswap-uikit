@@ -38,6 +38,10 @@ export enum icons {
   GNANA_TOKEN = "gnana_token",
   POLYGON_TOKEN = "polygon_token",
   BSC_TOKEN = "bsc_token",
+  DISCORD = "discord",
+  REDDIT = "reddit",
+  MEDIUM = "medium",
+  INSTAGRAM = "instagram",
 }
 
 export enum directions {

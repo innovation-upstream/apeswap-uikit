@@ -11,6 +11,9 @@ export default {
       options: ["light", "dark"],
       control: { type: "inline-radio" },
     },
+    sizing: {
+      control: { type: "select" },
+    },
   },
 };
 
