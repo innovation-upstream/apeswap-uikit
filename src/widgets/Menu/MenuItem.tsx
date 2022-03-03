@@ -63,21 +63,23 @@ const MenuItem: React.FC<MenuItemProps> = ({ label, icon, path, children, hasSub
           boxShadow: isActive ? "rgb(175, 110, 90) 4px 0px 0px inset" : "",
         }}
       >
-        <Container sx={styles.link} hasSubmenu={hasSubmenu} component={children} onClick={handleClick}>
-          <Flex sx={{ alignItems: "center" }}>
-            <Flex sx={{ flexShrink: 0 }}>
-              {typeof icon === "string" ? <Icon width={24} icon={icon as any} /> : icon}
+        <Container sx={styles.container} hasSubmenu={hasSubmenu} component={children} onClick={handleClick}>
+          <Flex sx={styles.link}>
+            <Flex sx={{ alignItems: "center" }}>
+              <Flex sx={{ flexShrink: 0 }}>
+                {typeof icon === "string" ? <Icon width={24} icon={icon as any} /> : icon}
+              </Flex>
+              <Flex sx={{ flexShrink: 0, marginLeft: "10px" }}>
+                <Text sx={styles.text}>{label}</Text>
+              </Flex>
             </Flex>
-            <Flex sx={{ flexShrink: 0, marginLeft: "10px" }}>
-              <Text sx={styles.text}>{label}</Text>
-            </Flex>
-          </Flex>
 
-          {hasSubmenu && (
-            <Box sx={{ display: collapse ? "none" : null }}>
-              <Icon icon="caret" direction={open ? "up" : "down"} />
-            </Box>
-          )}
+            {hasSubmenu && (
+              <Box sx={{ display: collapse ? "none" : null }}>
+                <Icon icon="caret" direction={open ? "up" : "down"} />
+              </Box>
+            )}
+          </Flex>
         </Container>
       </Flex>
 

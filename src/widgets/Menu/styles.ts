@@ -43,6 +43,10 @@ const styles: Record<string, ThemeUIStyleObject> = {
     justifyContent: "space-between",
     fontWeight: "600",
   },
+  container: {
+    width: "100%",
+    height: "100%",
+  },
   text: {
     color: "text",
     paddingLeft: "10px",
