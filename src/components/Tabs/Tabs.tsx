@@ -1,12 +1,22 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import { Box } from "theme-ui";
 import { Button } from "../Button";
-import { TabsProps, variants } from "./types";
+import { TabsProps, variants, tabPadding, sizes, fontSizes } from "./types";
 import styles from "./styles";
 
-const Tabs: React.FC<TabsProps> = ({ activeTab = 0, children, variant = variants.CENTERED }) => {
+const Tabs: React.FC<TabsProps> = ({ activeTab = 0, children, variant = variants.CENTERED, size = sizes.MEDIUM }) => {
   const [label, setLabel] = useState<string>();
   const activeRef = useRef<any>(null);
+  const [activeStyle, setActiveStyle] = useState({});
+
+  const getActiveStyles = useCallback(() => {
+    return {
+      width: activeRef?.current?.getBoundingClientRect?.()?.width || "fit-content",
+      left: activeRef?.current
+        ? activeRef?.current?.getBoundingClientRect?.()?.x - activeRef?.current?.parentNode.getBoundingClientRect?.()?.x
+        : 0,
+    };
+  }, [activeRef]);
 
   useEffect(() => {
     React.Children.forEach(children, (child) => {
@@ -14,7 +24,10 @@ const Tabs: React.FC<TabsProps> = ({ activeTab = 0, children, variant = variants
         setLabel((child as any)?.props?.label);
       }
     });
-  }, [activeTab, children]);
+    if (size) {
+      setActiveStyle(getActiveStyles());
+    }
+  }, [activeTab, children, getActiveStyles, size]);
 
   return (
     <Box
@@ -38,12 +51,9 @@ const Tabs: React.FC<TabsProps> = ({ activeTab = 0, children, variant = variants
         <Button
           csx={{
             ...styles.tabButton,
-            width: activeRef?.current?.getBoundingClientRect?.()?.width || "fit-content",
-            left: activeRef?.current
-              ? activeRef?.current?.getBoundingClientRect?.()?.x -
-                activeRef?.current?.parentNode.getBoundingClientRect?.()?.x
-              : 0,
+            ...activeStyle,
           }}
+          sx={{ px: tabPadding[size].x, py: tabPadding[size].y, fontSize: fontSizes[size] }}
         >
           {label}
         </Button>

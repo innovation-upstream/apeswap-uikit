@@ -29,3 +29,7 @@ export { default as Success } from "./Success";
 export { default as Settings } from "./Settings";
 export { default as Search } from "./Search";
 export { default as Chart } from "./Chart";
+export { default as Discord } from "./Discord";
+export { default as Reddit } from "./Reddit";
+export { default as Medium } from "./Medium";
+export { default as Instagram } from "./Instagram";
