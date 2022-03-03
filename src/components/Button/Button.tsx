@@ -33,6 +33,8 @@ const Button: React.FC<ButtonProps> = ({
         fontSize: buttonFontSizes[size],
         px: buttonPadding[size].x,
         py: buttonPadding[size].y,
+        display: "flex",
+        alignItems: "center",
         transition: "all .3s linear",
         ...hoverStyle,
         "&:active": {
