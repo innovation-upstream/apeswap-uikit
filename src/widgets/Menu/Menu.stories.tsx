@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /** @jsxImportSource theme-ui */
-import React from "react";
-import { NavLink } from "theme-ui";
+import React, { useContext, useState } from "react";
+import { NavLink, Flex, Box } from "theme-ui";
+import { AnimatePresence, motion } from "framer-motion";
 import StorybookLayout from "../../components/StorybookLayout/StorybookLayout";
 import { Text } from "../../components/Text";
 import { Menu, MenuBody, MenuItem, MenuFooter } from ".";
@@ -24,12 +25,12 @@ const sideMenu = [
   {
     label: "Home",
     icon: icons.HOME,
-    path: "/hello",
+    path: "/",
   },
   {
     label: "Ape Stats",
     icon: icons.CALCULATOR,
-    path: "/",
+    path: "#",
   },
   {
     label: "Trade",
@@ -37,33 +38,33 @@ const sideMenu = [
     subMenu: [
       {
         label: "Buy",
-        path: "/hi",
+        path: "/",
       },
       {
         label: "Sell",
-        path: "/",
+        path: "#",
       },
     ],
   },
   {
     label: "Vaults",
     icon: icons.VAULT,
-    path: "/",
+    path: "#",
   },
   {
     label: "Farms",
     icon: icons.FARM,
-    path: "/",
+    path: "#",
   },
   {
     label: "Pools",
     icon: icons.POOL,
-    path: "/",
+    path: "#",
   },
   {
     label: "IAO",
     icon: icons.ROCKET,
-    path: "/",
+    path: "#",
   },
   {
     label: "NFA",
@@ -71,19 +72,19 @@ const sideMenu = [
     subMenu: [
       {
         label: "More",
-        path: "/",
+        path: "#",
       },
     ],
   },
   {
     label: "GNANA",
     icon: icons.GNANA,
-    path: "/",
+    path: "#",
   },
   {
     label: "Info",
     icon: icons.INFO,
-    path: "/",
+    path: "#",
   },
   {
     label: "More",
@@ -91,52 +92,121 @@ const sideMenu = [
     subMenu: [
       {
         label: "More",
-        path: "/",
+        path: "#",
       },
     ],
   },
 ];
 
-const linkStyle = {
-  "&::after": {
-    content: '""',
-    position: "absolute",
-    width: "100%",
-    height: "100%",
-    left: 0,
-    top: 0,
+const menuItemContainer = {
+  alignItems: "center",
+  height: "48px",
+  pl: "17px",
+  pr: "20px",
+  flexShrink: 0,
+  boxShadow: "none",
+  fontSize: "16px",
+  "&:hover": {
+    cursor: "pointer",
+    backgroundColor: "white4",
   },
+} as any;
+
+const linkStyle = {
+  display: "flex",
+  alignItems: "center",
+  width: "100%",
+  height: "100%",
+  justifyContent: "space-between",
 };
 
-export const Default = (args: any) => {
+const MenuComponent = ({ icon, label, path }) => {
+  const { active } = useContext(MenuContext);
+
   return (
-    <StorybookLayout {...args}>
-      <MenuContext.Provider
-        value={{
-          ...args,
-          setCollapse: () => {},
+    <Flex
+      sx={{
+        ...menuItemContainer,
+        boxShadow: path === active ? "rgb(175, 110, 90) 4px 0px 0px inset" : "",
+      }}
+    >
+      <Flex sx={linkStyle}>
+        <Flex sx={{ alignItems: "center" }}>
+          <Flex sx={{ flexShrink: 0 }}>{typeof icon === "string" ? <Icon width={24} icon={icon as any} /> : icon}</Flex>
+          <Flex sx={{ flexShrink: 0, marginLeft: "10px" }}>
+            <NavLink href={path}>
+              <Text
+                sx={{
+                  color: "text",
+                  paddingLeft: "10px",
+                  fontWeight: "400",
+                }}
+              >
+                {label}
+              </Text>
+            </NavLink>
+          </Flex>
+        </Flex>
+      </Flex>
+    </Flex>
+  );
+};
+
+const Submenu = ({ icon, label, items }) => {
+  const [open, setOpen] = useState(false);
+  const { active, collapse } = useContext(MenuContext);
+
+  return (
+    <>
+      <Flex
+        onClick={() => setOpen((prev) => !prev)}
+        sx={{
+          ...menuItemContainer,
         }}
       >
-        <Menu {...args}>
-          <MenuBody>
-            {sideMenu.map(({ subMenu, ...item }, index) => (
-              <MenuItem hasSubmenu={!!subMenu} {...item} key={`${item}-${index + 1}`}>
-                {!subMenu ? (
-                  <NavLink href={item.path} sx={linkStyle as any}>
-                    <Text
-                      sx={{
-                        color: "text",
-                        paddingLeft: "10px",
-                        fontWeight: "400",
-                      }}
-                    >
-                      {item.label}
-                    </Text>
-                  </NavLink>
-                ) : (
-                  subMenu?.map((link) => (
-                    <MenuItem isSubmenu {...link}>
-                      <NavLink href={link.path} sx={linkStyle as any}>
+        <Flex sx={linkStyle}>
+          <Flex sx={{ alignItems: "center" }}>
+            <Flex sx={{ flexShrink: 0 }}>
+              {typeof icon === "string" ? <Icon width={24} icon={icon as any} /> : icon}
+            </Flex>
+            <Flex sx={{ flexShrink: 0, marginLeft: "10px" }}>
+              <Text
+                sx={{
+                  color: "text",
+                  paddingLeft: "10px",
+                  fontWeight: "400",
+                }}
+              >
+                {label}
+              </Text>
+            </Flex>
+          </Flex>
+          <Box sx={{ display: collapse ? "none" : null }}>
+            <Icon icon="caret" direction={open ? "up" : "down"} />
+          </Box>
+        </Flex>
+      </Flex>
+      <AnimatePresence>
+        {!collapse && open && (
+          <motion.div
+            initial={{ height: 0 }}
+            animate={{ height: "fit-content" }}
+            transition={{ height: { duration: 0.3 } }}
+            exit={{ height: 0 }}
+            sx={{ overflow: "hidden" }}
+          >
+            {items?.map((link, index) => (
+              <Flex
+                sx={{
+                  ...menuItemContainer,
+                  position: "relative",
+                  boxShadow: link.path === active ? "rgb(175, 110, 90) 4px 0px 0px inset" : "",
+                }}
+              >
+                <Flex key={`${link.label}-${index + 1}`} sx={linkStyle}>
+                  <Flex sx={{ alignItems: "center" }}>
+                    <Flex sx={{ flexShrink: 0, marginLeft: "10px" }}>
+                      <NavLink href={link.path}>
                         <Text
                           sx={{
                             color: "text",
@@ -147,8 +217,36 @@ export const Default = (args: any) => {
                           {link.label}
                         </Text>
                       </NavLink>
-                    </MenuItem>
-                  ))
+                    </Flex>
+                  </Flex>
+                </Flex>
+              </Flex>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
+
+export const Default = (args: any) => {
+  return (
+    <StorybookLayout {...args}>
+      <MenuContext.Provider
+        value={{
+          ...args,
+          active: "/",
+          setCollapse: () => {},
+        }}
+      >
+        <Menu {...args}>
+          <MenuBody>
+            {sideMenu.map(({ subMenu, ...item }, index) => (
+              <MenuItem key={`${item}-${index + 1}`}>
+                {!subMenu ? (
+                  <MenuComponent label={item.label} icon={item.icon} path={item.path} />
+                ) : (
+                  <Submenu items={subMenu} label={item.label} icon={item.icon} />
                 )}
               </MenuItem>
             ))}

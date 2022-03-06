@@ -22,40 +22,15 @@ const styles: Record<string, ThemeUIStyleObject> = {
     width: "100%",
     marginBottom: "20px",
   },
-  MenuItemContainer: {
-    alignItems: "center",
-    height: "48px",
-    pl: "17px",
-    pr: "20px",
-    flexShrink: 0,
-    boxShadow: "none",
-    fontSize: "16px",
-    "&:hover": {
-      cursor: "pointer",
-      backgroundColor: "white4",
-    },
-  },
-  link: {
-    display: "flex",
-    alignItems: "center",
-    width: "100%",
-    height: "100%",
-    justifyContent: "space-between",
-  },
   container: {
     width: "100%",
     height: "100%",
   },
-  text: {
-    color: "text",
-    paddingLeft: "10px",
-    fontWeight: "400",
-  },
   footer: {
-    paddingTop: [5, 5, 0],
+    paddingTop: 5,
     height: "auto",
     width: "100%",
-    boxShadow: ["rgb(0 0 0 / 16%) 0px 1px 4px", "rgb(0 0 0 / 16%) 0px 1px 4px", "none"],
+    boxShadow: "rgb(0 0 0 / 16%) 0px 1px 4px",
   },
 };
 
