@@ -5,4 +5,4 @@ export { default as MenuFooter } from "./MenuFooter";
 export { default as MenuContext } from "./MenuContext";
 export { MenuContextProvider } from "./MenuContext";
 
-export type { MenuContextProps, MenuItemProps } from "./types";
+export type { MenuContextProps } from "./types";
