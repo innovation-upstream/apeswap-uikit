@@ -20,8 +20,8 @@ export const fontSizes = {
 
 export type sizeProps = `${sizes}`;
 
-export interface ToggleProps extends InputHTMLAttributes<HTMLInputElement> {
-  checked: boolean;
+export interface ToggleProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "size"> {
+  checked?: boolean;
   labels: [string, string];
-  sizing?: sizeProps;
+  size?: sizeProps;
 }
