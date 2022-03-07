@@ -6,7 +6,7 @@ import { Text } from "../Text";
 import { ToggleProps, sizes, togglePadding, fontSizes } from "./types";
 import styles from "./styles";
 
-const Toggle: React.FC<ToggleProps> = ({ checked, labels, sizing = sizes.MEDIUM, ...props }) => {
+const Toggle: React.FC<ToggleProps> = ({ checked, labels, size = sizes.MEDIUM, ...props }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const leftRef = useRef<any>(null);
   const rightRef = useRef<any>(null);
@@ -15,13 +15,13 @@ const Toggle: React.FC<ToggleProps> = ({ checked, labels, sizing = sizes.MEDIUM,
 
   const getActiveStyles = useCallback(() => {
     return {
-      width: (isChecked && sizing ? rightRef : leftRef)?.current?.getBoundingClientRect?.()?.width || "fit-content",
+      width: (isChecked && size ? rightRef : leftRef)?.current?.getBoundingClientRect?.()?.width || "fit-content",
       left:
         isChecked && rightRef?.current
           ? rightRef?.current?.getBoundingClientRect?.()?.x - rightRef?.current?.parentNode.getBoundingClientRect?.()?.x
           : 0,
     };
-  }, [isChecked, sizing]);
+  }, [isChecked, size]);
 
   useEffect(() => {
     setActiveStyle(() => getActiveStyles());
@@ -40,13 +40,13 @@ const Toggle: React.FC<ToggleProps> = ({ checked, labels, sizing = sizes.MEDIUM,
           ...styles.switch,
           background: "white3",
           color: "primaryButtonDisable",
-          px: togglePadding[sizing].x,
-          py: togglePadding[sizing].y,
-          fontSize: fontSizes[sizing],
+          px: togglePadding[size].x,
+          py: togglePadding[size].y,
+          fontSize: fontSizes[size],
         }}
         onClick={handleClick}
       >
-        <Text variant="sm" sx={{ fontSize: fontSizes[sizing] }} weight="bold">
+        <Text variant="sm" sx={{ fontSize: fontSizes[size] }} weight="bold">
           {labels[0]}
         </Text>
       </Box>
@@ -57,13 +57,13 @@ const Toggle: React.FC<ToggleProps> = ({ checked, labels, sizing = sizes.MEDIUM,
           ...styles.switch,
           background: "white3",
           color: "primaryButtonDisable",
-          px: togglePadding[sizing].x,
-          py: togglePadding[sizing].y,
-          fontSize: fontSizes[sizing],
+          px: togglePadding[size].x,
+          py: togglePadding[size].y,
+          fontSize: fontSizes[size],
         }}
         onClick={handleClick}
       >
-        <Text variant="sm" sx={{ fontSize: fontSizes[sizing] }} weight="bold">
+        <Text variant="sm" sx={{ fontSize: fontSizes[size] }} weight="bold">
           {labels[1]}
         </Text>
       </Box>
@@ -71,9 +71,9 @@ const Toggle: React.FC<ToggleProps> = ({ checked, labels, sizing = sizes.MEDIUM,
         csx={{
           ...styles.button,
           ...activeStyle,
-          fontSize: fontSizes[sizing],
-          px: togglePadding[sizing].x,
-          py: togglePadding[sizing].y,
+          fontSize: fontSizes[size],
+          px: togglePadding[size].x,
+          py: togglePadding[size].y,
         }}
       >
         {isChecked ? labels[1] : labels[0]}

@@ -11,7 +11,7 @@ export default {
       options: ["light", "dark"],
       control: { type: "inline-radio" },
     },
-    sizing: {
+    size: {
       control: { type: "select" },
     },
   },
@@ -19,11 +19,12 @@ export default {
 
 export const Default = (args: any) => (
   <StorybookLayout {...args}>
-    <Toggle {...args} labels={["Switch1", "Switch2"]} onChange={() => {}} />
+    <Toggle {...args} onChange={() => {}} />
   </StorybookLayout>
 );
 
 Default.args = {
   checked: false,
   colorMode: "light",
+  labels: ["Switch1", "Switch2"],
 };
