@@ -44,7 +44,7 @@ it("renders correctly", () => {
           </button>
         </div>
         <div
-          class="css-thtaj5"
+          class="css-8ck628"
         />
         <div
           class="css-zucnu"

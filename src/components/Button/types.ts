@@ -1,5 +1,5 @@
 import { ButtonProps as ThemeUIButtonProps, ThemeUICSSObject } from "theme-ui";
-import { iconTypes } from "../Icon/types";
+import { iconTypes } from "../Svg/types";
 import { colorProps } from "../../theme/Apeswap/types";
 
 export enum sizes {

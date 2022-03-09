@@ -7,7 +7,7 @@ import { IconButton } from "../Button";
 import { Text } from "../Text";
 import { AlertProps, variants } from "./types";
 import { LinkExternal } from "../Link";
-import { Icon } from "../Icon";
+import { Svg } from "../Svg";
 
 const Alert: React.FC<AlertProps> = ({ variant = variants.ERROR, text, linkText, url, size, onClose }) => {
   return (
@@ -19,7 +19,7 @@ const Alert: React.FC<AlertProps> = ({ variant = variants.ERROR, text, linkText,
       sx={styles.alert}
     >
       <Flex>
-        <Icon
+        <Svg
           icon={variant === "danger" ? "close" : variant}
           color={variant === "error" || variant === "danger" ? "error" : `${variant}`}
           width="30px"

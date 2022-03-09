@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react";
 import { Box, Flex } from "theme-ui";
 import { AnimatePresence, motion } from "framer-motion";
 import { SelectProps, selectPadding, sizes, positions } from "./types";
-import { Icon } from "../Icon";
+import { Svg } from "../Svg";
 import styles from "./styles";
 
 const Select: React.FC<SelectProps> = ({
@@ -50,7 +50,7 @@ const Select: React.FC<SelectProps> = ({
               active: true,
             });
           })}
-          <Icon icon="caret" direction={open ? "up" : "down"} />
+          <Svg icon="caret" direction={open ? "up" : "down"} />
         </Flex>
         <AnimatePresence>
           {open && (

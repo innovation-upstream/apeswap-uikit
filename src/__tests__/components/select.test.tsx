@@ -4,7 +4,7 @@ import { Select, SelectItem } from "../../components/Select";
 
 it("renders correctly", () => {
   const { asFragment } = renderWithTheme(
-    <Select>
+    <Select onChange={() => null}>
       <SelectItem value={0}>Dropdown</SelectItem>
     </Select>
   );

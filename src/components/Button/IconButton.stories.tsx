@@ -1,6 +1,6 @@
 import React from "react";
 import IconButton from "./IconButton";
-import { Icon } from "../Icon";
+import { Svg } from "../Svg";
 import StorybookLayout from "../StorybookLayout/StorybookLayout";
 
 export default {
@@ -29,7 +29,7 @@ export const Default = (args: any) => (
 export const Custom = (args: any) => (
   <StorybookLayout {...args}>
     <IconButton {...args}>
-      <Icon color={"white" as any} icon="twitter" />
+      <Svg color={"white" as any} icon="twitter" />
     </IconButton>
   </StorybookLayout>
 );

@@ -1,7 +1,7 @@
 /* eslint-disable react/require-default-props */
 import React from "react";
 import { Box, Link } from "theme-ui";
-import { Icon } from "../Icon";
+import { Svg } from "../Svg";
 import { LinkExternalProps } from "./types";
 
 const LinkExternal: React.FC<LinkExternalProps> = ({ display, textAlign, children, ...props }) => {
@@ -18,7 +18,7 @@ const LinkExternal: React.FC<LinkExternalProps> = ({ display, textAlign, childre
     >
       {children}
       <Box as="span" sx={{ marginLeft: 2, verticalAlign: "middle" }}>
-        <Icon icon="external" color="text" />
+        <Svg icon="external" color="text" />
       </Box>
     </Link>
   );

@@ -7,8 +7,8 @@ import StorybookLayout from "../../components/StorybookLayout/StorybookLayout";
 import { Text } from "../../components/Text";
 import { Menu, MenuBody, MenuItem, MenuFooter } from ".";
 import MenuContext from "./MenuContext";
-import { icons } from "../../components/Icon/types";
-import { Icon } from "../../components/Icon";
+import { icons } from "../../components/Svg/types";
+import { Svg } from "../../components/Svg";
 
 export default {
   title: "Widgets/Menu",
@@ -88,7 +88,7 @@ const sideMenu = [
   },
   {
     label: "More",
-    icon: <Icon width={24} icon="more" />,
+    icon: <Svg width={24} icon="more" />,
     subMenu: [
       {
         label: "More",
@@ -132,7 +132,7 @@ const MenuComponent = ({ icon, label, path }) => {
     >
       <Flex sx={linkStyle}>
         <Flex sx={{ alignItems: "center" }}>
-          <Flex sx={{ flexShrink: 0 }}>{typeof icon === "string" ? <Icon width={24} icon={icon as any} /> : icon}</Flex>
+          <Flex sx={{ flexShrink: 0 }}>{typeof icon === "string" ? <Svg width={24} icon={icon as any} /> : icon}</Flex>
           <Flex sx={{ flexShrink: 0, marginLeft: "10px" }}>
             <NavLink href={path}>
               <Text
@@ -167,7 +167,7 @@ const Submenu = ({ icon, label, items }) => {
         <Flex sx={linkStyle}>
           <Flex sx={{ alignItems: "center" }}>
             <Flex sx={{ flexShrink: 0 }}>
-              {typeof icon === "string" ? <Icon width={24} icon={icon as any} /> : icon}
+              {typeof icon === "string" ? <Svg width={24} icon={icon as any} /> : icon}
             </Flex>
             <Flex sx={{ flexShrink: 0, marginLeft: "10px" }}>
               <Text
@@ -182,7 +182,7 @@ const Submenu = ({ icon, label, items }) => {
             </Flex>
           </Flex>
           <Box sx={{ display: collapse ? "none" : null }}>
-            <Icon icon="caret" direction={open ? "up" : "down"} />
+            <Svg icon="caret" direction={open ? "up" : "down"} />
           </Box>
         </Flex>
       </Flex>
@@ -255,13 +255,13 @@ export const Default = (args: any) => {
           <MenuFooter>
             <div sx={{ display: "flex", justifyContent: "space-between", ml: "19px", mr: "26px", mb: "70px" }}>
               <div sx={{ display: "flex", alignItems: "center", columnGap: "8px" }}>
-                <Icon icon="ellipse" />
+                <Svg icon="ellipse" />
                 <Text sx={{ color: "text", fontSize: "14px" }} weight="bold">
                   $3.747
                 </Text>
               </div>
-              <Icon icon="ellipse" />
-              <Icon icon="ellipse" />
+              <Svg icon="ellipse" />
+              <Svg icon="ellipse" />
             </div>
           </MenuFooter>
         </Menu>

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Box, Flex } from "theme-ui";
 import { AnimatePresence, motion } from "framer-motion";
 import { DropdownProps, dropdownPadding, fontSizes, sizes } from "./types";
-import { Icon } from "../Icon";
+import { Svg } from "../Svg";
 
 const Dropdown: React.FC<DropdownProps> = ({ component, children, size = sizes.MEDIUM }) => {
   const [open, setOpen] = useState(false);
@@ -32,7 +32,7 @@ const Dropdown: React.FC<DropdownProps> = ({ component, children, size = sizes.M
         }}
       >
         {component}
-        <Icon icon="caret" direction={open ? "up" : "down"} />
+        <Svg icon="caret" direction={open ? "up" : "down"} />
       </Flex>
       <AnimatePresence>
         {open && (
