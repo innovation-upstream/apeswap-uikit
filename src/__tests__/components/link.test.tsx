@@ -7,7 +7,7 @@ it("renders link correctly", () => {
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
       <a
-        class="sc-bdfBQB kOrAbB"
+        class="sc-gsTEea dUuGld"
         color="primary"
         href="https://apeswap.finance"
       >

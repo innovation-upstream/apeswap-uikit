@@ -24,7 +24,6 @@ export * from "./components/Textarea";
 export * from "./components/Carousel";
 export * from "./components/TooltipBubble";
 export * from "./components/Select";
-export * from "./components/Icon";
 
 // Hooks
 export * from "./hooks";

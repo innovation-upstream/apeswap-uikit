@@ -1,5 +1,5 @@
 import { InputProps as Props } from "theme-ui";
-import { iconTypes } from "../Icon/types";
+import { iconTypes } from "../Svg/types";
 
 export enum sizes {
   SM = "sm",
