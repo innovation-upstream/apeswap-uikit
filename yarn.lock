@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@apeswapfinance/eslint-config-apeswap@1.0.0":
-  version "1.0.0"
-  resolved "https://npm.pkg.github.com/download/@apeswapfinance/eslint-config-apeswap/1.0.0/cf301984e97808b8032e2cd4118a181b03c1559a5c7c14dd9bff955e4f7c2edc#d095386c092f2d98964a05e7b8dd90bb1909e47a"
-  integrity sha512-mW1DhwVSxMi6AOOjyN3c0l+GId0curMAn0ui/3aKnk+kF+ffWlPCJEY4sqwU2hZbznrSvHlB0aBW+aplfDILtw==
+"@ape.swap/eslint-config-apeswap@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@ape.swap/eslint-config-apeswap/-/eslint-config-apeswap-1.0.1.tgz#4cb0c9e97c38c625dafffda3a2e7e9d61c74118f"
+  integrity sha512-1xFseqvPxfqSPXCSqK9r7U8Si+rKLh0OZ4fp/j+XrhpuhDsMqb5TR7WrD6k4jbLQkr9F2WYA9b9NIxitZHZkOw==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^4.7.0"
     "@typescript-eslint/parser" "^4.7.0"

@@ -34,10 +34,11 @@
     ]
   },
   "publishConfig": {
+    "access": "public",
     "registry": "https://registry.npmjs.org"
   },
   "devDependencies": {
-    "@apeswapfinance/eslint-config-apeswap": "1.0.0",
+    "@ape.swap/eslint-config-apeswap": "^1.0.1",
     "@babel/core": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
     "@binance-chain/bsc-use-wallet": "^0.8.1",
