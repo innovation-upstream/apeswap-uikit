@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../../components/Button/Button";
+import ButtonSquare from "../../components/ButtonSquare/ButtonSquare";
 import Text from "../../components/Text/Text";
 import LinkExternal from "../../components/Link/LinkExternal";
 import Flex from "../../components/Flex/Flex";
@@ -17,23 +17,21 @@ const AccountModal: React.FC<Props> = ({ account, logout, onDismiss = () => null
   <Modal title="Your wallet" onDismiss={onDismiss}>
     <Text
       fontSize="20px"
-      fontFamily="poppins"
-      bold
+      fontWeight={600}
       style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" }}
     >
       {account}
     </Text>
     <Flex mb="32px">
-      <LinkExternal small href={`https://bscscan.com/address/${account}`} mr="16px" fontFamily="poppins">
+      <LinkExternal small href={`https://bscscan.com/address/${account}`} mr="16px" fontFamily="poppins" bold>
         View on BscScan
       </LinkExternal>
       <CopyToClipboard toCopy={account}>Copy Address</CopyToClipboard>
     </Flex>
     <Flex justifyContent="center">
-      <Button
+      <ButtonSquare
         size="sm"
         variant="secondary"
-        fontFamily="poppins"
         onClick={() => {
           logout();
           window.localStorage.removeItem(localStorageKey);
@@ -42,7 +40,7 @@ const AccountModal: React.FC<Props> = ({ account, logout, onDismiss = () => null
         }}
       >
         Logout
-      </Button>
+      </ButtonSquare>
     </Flex>
   </Modal>
 );

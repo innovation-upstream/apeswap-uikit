@@ -22,13 +22,15 @@ export * from "./components/Spinner";
 export * from "./components/Skeleton";
 export * from "./components/Toggle";
 export * from "./components/Table";
+export * from "./components/Footer";
+export * from "./components/ThemeSwitcher";
 
 // Hooks
 export * from "./hooks";
 
 // Widgets
 export * from "./widgets/Modal";
-export * from "./widgets/Menu";
+export * from "./widgets/Navbar";
 export * from "./widgets/Toast";
 export * from "./widgets/WalletModal";
 export * from "./widgets/MarketingModal";
