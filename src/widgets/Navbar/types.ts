@@ -1,5 +1,6 @@
 import { SwitchNetwork } from "../NetworkModal/types";
 import { Login } from "../WalletModal/types";
+import { TrackHandler } from "../../util/trackSocialClick";
 
 export interface LangType {
   code: string;
@@ -57,4 +58,5 @@ export interface NavProps extends PanelProps {
   logout: () => void;
   chainId: number;
   switchNetwork: SwitchNetwork;
+  track?: TrackHandler | undefined;
 }

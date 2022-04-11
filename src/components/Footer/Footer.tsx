@@ -35,17 +35,20 @@ import lightTheme from "../../theme/light";
 import darkTheme from "../../theme/dark";
 import { ThemeSwitcher } from "../ThemeSwitcher";
 import MobileLinks from "./MobileLinks";
+import trackSocialClick from "../../util/trackSocialClick";
 
-const Footer: React.FC<FooterProps> = ({ chainId, toggleTheme, isDark, bananaPriceUsd, switchNetwork }) => {
+const Footer: React.FC<FooterProps> = ({ chainId, toggleTheme, isDark, bananaPriceUsd, switchNetwork, track }) => {
   const iconFillColor = isDark ? darkTheme.colors.text : lightTheme.colors.text;
   const { isXxl, isLg, isXl } = useMatchBreakpoints();
   const isMobile = isXxl === false && isXl === false && isLg === false;
+  const label = "Footer";
+
   return (
     <Container>
       <FlexContainer>
         <LogoFlex>
           <FullLogo width="240px" mb="20px" />
-          <Text color="white">
+          <Text style={{ color: "white" }}>
             {`ApeSwap is a DeFi Hub on BNB Chain & Polygon focused on offering an accessible, transparent and secure
             experience for everyone.`}
           </Text>
@@ -56,22 +59,48 @@ const Footer: React.FC<FooterProps> = ({ chainId, toggleTheme, isDark, bananaPri
           </ButtonFlex>
           <IconFlex>
             <StyledLink href="https://twitter.com/ape_swap" target="_blank" rel="noopener noreferrer">
-              <TwitterIcon color="white3" fill={iconFillColor} />
+              <TwitterIcon
+                color="white3"
+                fill={iconFillColor}
+                onClick={() => trackSocialClick(track, "twitter", label, "https://twitter.com/ape_swap", chainId)}
+              />
             </StyledLink>
             <StyledLink href="https://discord.com/invite/ApeSwap" target="_blank" rel="noopener noreferrer">
-              <DiscordIcon color="white3" fill={iconFillColor} />
+              <DiscordIcon
+                color="white3"
+                fill={iconFillColor}
+                onClick={() => trackSocialClick(track, "discord", label, "https://discord.com/invite/ApeSwap", chainId)}
+              />
             </StyledLink>
             <StyledLink href="https://t.me/ape_swap" target="_blank" rel="noopener noreferrer">
-              <TelegramIcon color="white3" fill={iconFillColor} />
+              <TelegramIcon
+                color="white3"
+                fill={iconFillColor}
+                onClick={() => trackSocialClick(track, "telegram", label, "https://t.me/ape_swap", chainId)}
+              />
             </StyledLink>
             <StyledLink href="https://www.reddit.com/r/Apeswap/" target="_blank" rel="noopener noreferrer">
-              <RedditIcon color="white3" fill={iconFillColor} />
+              <RedditIcon
+                color="white3"
+                fill={iconFillColor}
+                onClick={() => trackSocialClick(track, "reddit", label, "https://www.reddit.com/r/Apeswap/", chainId)}
+              />
             </StyledLink>
             <StyledLink href="https://ape-swap.medium.com/" target="_blank" rel="noopener noreferrer">
-              <MediumIcon color="white3" fill={iconFillColor} />
+              <MediumIcon
+                color="white3"
+                fill={iconFillColor}
+                onClick={() => trackSocialClick(track, "medium", label, "https://ape-swap.medium.com/", chainId)}
+              />
             </StyledLink>
             <StyledLink href="https://www.instagram.com/apeswap.finance/" target="_blank" rel="noopener noreferrer">
-              <InstagramIcon color="white3" fill={iconFillColor} />
+              <InstagramIcon
+                color="white3"
+                fill={iconFillColor}
+                onClick={() =>
+                  trackSocialClick(track, "instagram", label, "https://www.instagram.com/apeswap.finance/", chainId)
+                }
+              />
             </StyledLink>
           </IconFlex>
           <BottomRowContainer>
@@ -82,7 +111,9 @@ const Footer: React.FC<FooterProps> = ({ chainId, toggleTheme, isDark, bananaPri
                   target="_blank"
                 >
                   <ApeSwapRoundIcon width="34px" mr="8px" />
-                  <Text color="white" fontSize="18px" fontWeight={600}>{`$${bananaPriceUsd.toFixed(3)}`}</Text>
+                  <Text fontSize="18px" fontWeight={600} style={{ color: "white" }}>{`$${bananaPriceUsd.toFixed(
+                    3
+                  )}`}</Text>
                 </PriceLink>
               ) : (
                 <Skeleton width={90} height={35} />
@@ -98,7 +129,7 @@ const Footer: React.FC<FooterProps> = ({ chainId, toggleTheme, isDark, bananaPri
         ) : (
           <LinkskWrapper>
             <LinkColumnFlex style={{ width: "200px" }}>
-              <Text color="rgba(255, 179, 0, 1)" fontSize="22px" bold>
+              <Text style={{ color: "rgba(255, 179, 0, 1)" }} fontSize="22px" bold>
                 Support
               </Text>
               {supportLinks.map((link) => {
@@ -110,7 +141,7 @@ const Footer: React.FC<FooterProps> = ({ chainId, toggleTheme, isDark, bananaPri
               })}
             </LinkColumnFlex>
             <LinkColumnFlex style={{ width: "240px" }}>
-              <Text color="rgba(255, 179, 0, 1)" fontSize="22px" bold>
+              <Text style={{ color: "rgba(255, 179, 0, 1)" }} fontSize="22px" bold>
                 Engage
               </Text>
               {engageLinks.map((link) => {
@@ -122,7 +153,7 @@ const Footer: React.FC<FooterProps> = ({ chainId, toggleTheme, isDark, bananaPri
               })}
             </LinkColumnFlex>
             <LinkColumnFlex style={{ width: "130px" }}>
-              <Text color="rgba(255, 179, 0, 1)" fontSize="22px" bold>
+              <Text style={{ color: "rgba(255, 179, 0, 1)" }} fontSize="22px" bold>
                 Learn
               </Text>
               {learnLinks.map((link) => {

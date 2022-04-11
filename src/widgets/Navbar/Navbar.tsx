@@ -21,6 +21,7 @@ import MobileNavMenu from "./MobileNavMenu";
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
+  z-index: 0;
 `;
 
 const NavItem = styled.div<{ active?: boolean }>`
@@ -48,7 +49,7 @@ const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean; isPushed: b
   align-items: center;
   width: 100%;
   height: ${MENU_HEIGHT}px;
-  background-color: ${({ theme }) => theme.nav.background};
+  background-color: ${({ theme }) => theme.colors.navbar};
   border-bottom: solid 2px rgba(133, 133, 133, 0.1);
   z-index: 20;
   transform: translate3d(0, 0, 0);
@@ -96,8 +97,9 @@ const Navbar: React.FC<NavProps> = ({
   links,
   profile,
   children,
-  chainId,
   switchNetwork,
+  chainId,
+  track,
 }) => {
   const { isXxl } = useMatchBreakpoints();
   const isMobile = isXxl === false;
@@ -195,6 +197,8 @@ const Navbar: React.FC<NavProps> = ({
                       image={isDark ? link.darkIcon : link.lightIcon}
                       label={link.label}
                       isDark={isDark}
+                      chainId={chainId}
+                      track={track}
                     />
                   )}
                 </div>
@@ -245,6 +249,7 @@ const Navbar: React.FC<NavProps> = ({
       </BodyWrapper>
       <Footer
         chainId={chainId}
+        track={track}
         toggleTheme={toggleTheme}
         bananaPriceUsd={bananaPriceUsd}
         isDark={isDark}
