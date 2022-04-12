@@ -4,18 +4,25 @@ import { Button } from "../Button";
 import { TabsProps, variants, tabPadding, sizes, fontSizes } from "./types";
 import styles from "./styles";
 
+const isBrowser = typeof window === "object";
+
 const Tabs: React.FC<TabsProps> = ({ activeTab = 0, children, variant = variants.CENTERED, size = sizes.MEDIUM }) => {
   const [label, setLabel] = useState<string>();
   const activeRef = useRef<any>(null);
   const [activeStyle, setActiveStyle] = useState({});
 
   const getActiveStyles = useCallback(() => {
-    return {
-      width: activeRef?.current?.getBoundingClientRect?.()?.width || "fit-content",
-      left: activeRef?.current
-        ? activeRef?.current?.getBoundingClientRect?.()?.x - activeRef?.current?.parentNode.getBoundingClientRect?.()?.x
-        : 0,
-    };
+    return isBrowser
+      ? {
+          width: activeRef?.current?.getBoundingClientRect?.()?.width || "fit-content",
+          left: activeRef?.current
+            ? activeRef?.current?.getBoundingClientRect?.()?.x -
+              activeRef?.current?.parentNode.getBoundingClientRect?.()?.x
+            : 0,
+        }
+      : {
+          display: "none",
+        };
   }, [activeRef]);
 
   useEffect(() => {
@@ -45,6 +52,13 @@ const Tabs: React.FC<TabsProps> = ({ activeTab = 0, children, variant = variants
         {React.Children.map(children, (child) => {
           return React.cloneElement(child as any, {
             ...(child as any)?.props,
+            sx:
+              !isBrowser && (child as any)?.props?.index === activeTab
+                ? {
+                    background: "yellow",
+                    color: "primaryBright",
+                  }
+                : undefined,
             ref: (child as any)?.props?.index === activeTab ? activeRef : undefined,
           });
         })}
