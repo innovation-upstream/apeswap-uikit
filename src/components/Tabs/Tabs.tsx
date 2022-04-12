@@ -12,17 +12,12 @@ const Tabs: React.FC<TabsProps> = ({ activeTab = 0, children, variant = variants
   const [activeStyle, setActiveStyle] = useState({});
 
   const getActiveStyles = useCallback(() => {
-    return isBrowser
-      ? {
-          width: activeRef?.current?.getBoundingClientRect?.()?.width || "fit-content",
-          left: activeRef?.current
-            ? activeRef?.current?.getBoundingClientRect?.()?.x -
-              activeRef?.current?.parentNode.getBoundingClientRect?.()?.x
-            : 0,
-        }
-      : {
-          display: "none",
-        };
+    return {
+      width: activeRef?.current?.getBoundingClientRect?.()?.width || "fit-content",
+      left: activeRef?.current
+        ? activeRef?.current?.getBoundingClientRect?.()?.x - activeRef?.current?.parentNode.getBoundingClientRect?.()?.x
+        : 0,
+    };
   }, [activeRef]);
 
   useEffect(() => {
@@ -66,6 +61,7 @@ const Tabs: React.FC<TabsProps> = ({ activeTab = 0, children, variant = variants
           csx={{
             ...styles.tabButton,
             ...activeStyle,
+            display: isBrowser ? undefined : "none",
           }}
           sx={{ px: tabPadding[size].x, py: tabPadding[size].y, fontSize: fontSizes[size] }}
         >
