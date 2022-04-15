@@ -11,16 +11,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
       - name: Get tag name
         id: get_tag_name
         run: echo ::set-output name=TAG_NAME::${GITHUB_REF/refs\/tags\//}
       
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ steps.get_tag_name.outputs.TAG_NAME }}-branch
+      - name: Checkout branch
+        run: git checkout tags/${{ steps.get_tag_name.outputs.TAG_NAME }} -b ${{ steps.get_tag_name.outputs.TAG_NAME }}-branch
 
-      - name: setup git config
+      - name: Setup git config
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
@@ -40,7 +41,7 @@ jobs:
           always-auth=true
           EOT
       
-      - name: release
+      - name: Release
         env:
           TAG_NAME: ${{ steps.get_tag_name.outputs.TAG_NAME }}
           NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
