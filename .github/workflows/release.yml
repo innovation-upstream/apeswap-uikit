@@ -11,18 +11,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
       - name: Get tag name
         id: get_tag_name
         run: echo ::set-output name=TAG_NAME::${GITHUB_REF/refs\/tags\//}
-
-      - name: Switch branch
-        run: git switch -c ${{ steps.get_tag_name.outputs.TAG_NAME }}
+      
+      - name: Checkout code
+        uses: actions/checkout@v2
+        run: |
+          echo $(git branch --show-current)
+          git switch -c ${{ steps.get_tag_name.outputs.TAG_NAME }}
+          echo $(git branch --show-current)
 
       - name: setup git config
         run: |
+          echo $(git branch --show-current)
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
 
@@ -53,5 +55,5 @@ jobs:
           else
             dist_tag=latest
           fi
-          yarn release -- $TAG_NAME --tag=${dist_tag} --any-branch
+          yarn release -- $TAG_NAME --tag=${dist_tag} --branch ${TAG_NAME}
           
