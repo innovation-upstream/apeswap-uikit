@@ -20,8 +20,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "jest",
-    "release": "yarn build && np --branch ci-innovation-upstream --no-release-draft patch",
-    "tag-release": "yarn build && np --no-release-draft --no-publish"
+    "release": "yarn build && np --no-release-draft"
   },
   "husky": {
     "hooks": {
