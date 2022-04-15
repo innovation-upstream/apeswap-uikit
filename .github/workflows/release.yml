@@ -19,7 +19,9 @@ jobs:
         run: echo ::set-output name=TAG_NAME::${GITHUB_REF/refs\/tags\//}
       
       - name: Checkout branch
-        run: git checkout tags/${{ steps.get_tag_name.outputs.TAG_NAME }} -b ${{ steps.get_tag_name.outputs.TAG_NAME }}-branch
+        env:
+          TAG_NAME: ${{ steps.get_tag_name.outputs.TAG_NAME }}
+        run: git checkout tags/${TAG_NAME} -b ${TAG_NAME}-branch
 
       - name: Setup git config
         run: |
@@ -53,5 +55,5 @@ jobs:
           else
             dist_tag=latest
           fi
-          yarn release -- $TAG_NAME --tag=${dist_tag} --branch ${TAG_NAME}-branch
+          yarn release -- $TAG_NAME --tag=${dist_tag}${TAG_NAME:1:1} --branch ${TAG_NAME}-branch
           
