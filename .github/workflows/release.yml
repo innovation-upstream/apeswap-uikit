@@ -14,12 +14,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Switch branch
-        run: git switch -c ${{ steps.get_tag_name.outputs.TAG_NAME }}
-
       - name: Get tag name
         id: get_tag_name
         run: echo ::set-output name=TAG_NAME::${GITHUB_REF/refs\/tags\//}
+
+      - name: Switch branch
+        run: git switch -c ${{ steps.get_tag_name.outputs.TAG_NAME }}
 
       - name: setup git config
         run: |
