@@ -21,7 +21,7 @@
     "build-storybook": "build-storybook",
     "test": "jest",
     "release": "yarn build && np --branch ci-innovation-upstream --no-release-draft patch",
-    "tag-release": "yarn build && np --no-release-draft"
+    "tag-release": "yarn build && np --no-release-draft --no-publish"
   },
   "husky": {
     "hooks": {
