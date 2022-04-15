@@ -49,5 +49,5 @@ jobs:
           else
             dist_tag=prerelease
           fi
-          yarn tag-release -- $TAG_NAME --tag=${dist_tag}
+          yarn tag-release -- $TAG_NAME --tag=${dist_tag} --branch ${TAG_NAME}
           
