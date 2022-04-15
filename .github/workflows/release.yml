@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v2
       
       - name: Switch branch
-        run: git checkout tags/${{ steps.get_tag_name.outputs.TAG_NAME }} -b ${{ steps.get_tag_name.outputs.TAG_NAME }}
+        run: git checkout tags/${{ steps.get_tag_name.outputs.TAG_NAME }} -b ${{ steps.get_tag_name.outputs.TAG_NAME }}-branch
 
       - name: setup git config
         run: |
@@ -55,6 +55,5 @@ jobs:
             dist_tag=latest
           fi
           echo $(git branch --show-current)
-          git checkout ${{ steps.get_tag_name.outputs.TAG_NAME }}
-          yarn release -- $TAG_NAME --tag=${dist_tag} --branch ${TAG_NAME}
+          yarn release -- $TAG_NAME --tag=${dist_tag} --branch ${TAG_NAME}-branch
           
