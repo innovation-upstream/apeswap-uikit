@@ -53,5 +53,5 @@ jobs:
           else
             dist_tag=latest
           fi
-          yarn release -- $TAG_NAME --tag=${dist_tag} --branch ${TAG_NAME}
+          yarn release -- $TAG_NAME --tag=${dist_tag} --any-branch
           
