@@ -17,13 +17,11 @@ jobs:
       
       - name: Checkout code
         uses: actions/checkout@v2
-        run: |
-          echo $(git branch --show-current)
-          git switch -c ${{ steps.get_tag_name.outputs.TAG_NAME }}
-          echo $(git branch --show-current)
 
       - name: setup git config
         run: |
+          echo $(git branch --show-current)
+          git switch -c ${{ steps.get_tag_name.outputs.TAG_NAME }}
           echo $(git branch --show-current)
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
