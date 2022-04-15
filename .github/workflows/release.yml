@@ -11,14 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       - name: Get tag name
         id: get_tag_name
         run: echo ::set-output name=TAG_NAME::${GITHUB_REF/refs\/tags\//}
-
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ steps.get_tag_name.outputs.TAG_NAME }}
 
       - name: setup git config
         run: |
@@ -50,7 +48,7 @@ jobs:
           elif [[ "$TAG_NAME" == *"beta"* ]]; then
             dist_tag=beta
           else
-            dist_tag=prerelease
+            dist_tag=latest
           fi
-          yarn release -- $TAG_NAME --tag=${dist_tag} --branch ci-innovation-upstream
+          yarn release -- $TAG_NAME --tag=${dist_tag} --branch ${TAG_NAME}
           
